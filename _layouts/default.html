@@ -25,13 +25,19 @@
     <header class="page-header" role="banner">
       <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
       <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
-      {% if site.github.is_project_page %}
-        <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
-      {% endif %}
-      {% if site.show_downloads %}
-        <a href="{{ site.github.zip_url }}" class="btn">Download .zip</a>
-        <a href="{{ site.github.tar_url }}" class="btn">Download .tar.gz</a>
-      {% endif %}
+        {% comment %}
+        <!--a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
+          {% if site.show_downloads %}
+            <!a href="{{ site.github.zip_url }}" class="btn">Download .zip</a>
+            <a href="{{ site.github.tar_url }}" class="btn">Download .tar.gz</a-->
+          {% endif %}
+        {% endcomment %}
+        <ul class="menu-bar">
+          <li><a href="https://www.owenll66.com/">Home</a></li>
+          <li><a href="#Project">Project</a></li>
+          <li><a href="#Blog">Blog</a></li>
+          <li><a href="#About">About</a></li>
+        </ul>
     </header>
 
     <main id="content" class="main-content" role="main">
