@@ -20,11 +20,13 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
   </head>
   <body>
-    <a id="skip-to-content" href="#content">Skip to the content.</a>
 
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
     <header class="page-header" role="banner">
+
       <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
       <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+
         {% comment %}
         <!--a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
           {% if site.show_downloads %}
@@ -32,15 +34,15 @@
             <a href="{{ site.github.tar_url }}" class="btn">Download .tar.gz</a-->
           {% endif %}
         {% endcomment %}
-        <ul class="menu-bar">
+        <ul>
           <li><a href="https://www.owenll66.com/">Home</a></li>
           <li><a href="#Project">Project</a></li>
           <li><a href="#Blog">Blog</a></li>
           <li><a href="#About">About</a></li>
         </ul>
     </header>
-
-    <main id="content" class="main-content" role="main">
+    <h1>12321</h1>
+    <main id="content" class="main-content" role="main" style="background-color:cyan">
       {{ content }}
 
       <footer class="site-footer">

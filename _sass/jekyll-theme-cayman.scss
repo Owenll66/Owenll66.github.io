@@ -26,6 +26,7 @@
 }
 
 body {
+  background-color: yellow;
   padding: 0;
   margin: 0;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -111,9 +112,9 @@ a {
   background-color: $header-bg-color;
   background-image: linear-gradient(120deg, $header-bg-color-secondary, $header-bg-color);
 
-
   @include large {
     padding: 2.5rem 2.5rem;
+    padding-bottom: 0rem;
   }
 
   @include medium {
@@ -123,22 +124,49 @@ a {
   @include small {
     padding: 2rem 1rem;
   }
+
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+ul li {
+  float:left;
+}
+
+li a
+{
+  transition: .5s ease;
+  padding: 10px 10px;
+  font-size: 20px;
+  display: block;
+  color:white;
+}
+
+li a:hover {
+  background-color: rgba(138, 118, 243, 0.5);
+  color: white;
+  text-decoration: none;
 }
 
 .project-name {
   margin-top: 0;
-  margin-bottom: 0.1rem;
-
+  margin-bottom: 2 rem;
+  margin-left: 10px;
   @include large {
-    font-size: 2.25rem;
+    font-size: 2.00rem;
   }
 
   @include medium {
-    font-size: 2.25rem;
+    font-size: 1.25rem;
   }
 
   @include small {
-    font-size: 1.75rem;
+    font-size: 0.75rem;
   }
 }
 
@@ -289,7 +317,6 @@ a {
   }
 
   ul,
-  
   ol {
     margin-top: 0;
   }
