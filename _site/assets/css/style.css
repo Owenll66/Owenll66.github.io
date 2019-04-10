@@ -571,7 +571,6 @@ th {
   box-sizing: border-box; }
 
 body {
-  background-color: yellow;
   padding: 0;
   margin: 0;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -637,8 +636,8 @@ a {
 .page-header {
   color: #fff;
   text-align: left;
-  background-color: #1A63F6;
-  background-image: linear-gradient(120deg, #510D9F, #1A63F6); }
+  background-color: #2d79fc;
+  background-image: linear-gradient(120deg, #510D9F, #2d79fc); }
   @media screen and (min-width: 64em) {
     .page-header {
       padding: 2.5rem 2.5rem;
