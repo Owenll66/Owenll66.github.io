@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Owenll66’s blog site</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Owenll66’s blog site" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/blog-decisionStump.html" />
+<meta property="og:url" content="http://localhost:4000/blog-decisionStump.html" />
+<meta property="og:site_name" content="Owenll66’s blog site" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/blog-decisionStump.html","headline":"Owenll66’s blog site","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+  </head>
+  <body>
+
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+    <header class="page-header" role="banner">
+
+      <h1 class="project-name">Owenll66's blog site</h1>
+      <h2 class="project-tagline"></h2>
+
+        
+        <ul>
+          <li><a href="https://www.owenll66.com/">Home</a></li>
+          <li><a href="#Project">Project</a></li>
+          <li><a href="#Blog">Blog</a></li>
+          <li><a href="#About">About</a></li>
+        </ul>
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="a-succinct-solution-for-building-decision-stumps">A succinct solution for building decision stumps</h1>
+
+<h2 id="background">Background</h2>
+
+<p>I encountered this code when I was studying in the university on a machine learning course. I was intrigued by the succinct and concise code which was provided by my professor. It applies some mathematics and may look scary to understand at the first sight. However, you will find out the elegance of the code after you understand it.</p>
+
+<h2 id="matlab">Matlab</h2>
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">% build a stump from each component and return the best</span>
+<span class="k">function</span> <span class="p">[</span><span class="n">stump</span><span class="p">]</span> <span class="o">=</span> <span class="n">build_stump</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">w</span><span class="p">)</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="nb">size</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">w</span><span class="p">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">w</span><span class="p">);</span> <span class="c1">% normalized the weights (if not already)</span>
+
+<span class="n">stump</span> <span class="o">=</span> <span class="nb">cell</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">werr</span> <span class="o">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="k">for</span> <span class="nb">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="n">d</span><span class="p">,</span>
+  <span class="n">stump</span><span class="p">{</span><span class="nb">i</span><span class="p">}</span> <span class="o">=</span> <span class="n">build_onedim_stump</span><span class="p">(</span><span class="n">X</span><span class="p">(:,</span><span class="nb">i</span><span class="p">),</span><span class="n">y</span><span class="p">,</span><span class="n">w</span><span class="p">);</span>
+  <span class="n">stump</span><span class="p">{</span><span class="nb">i</span><span class="p">}</span><span class="o">.</span><span class="n">ind</span> <span class="o">=</span> <span class="nb">i</span><span class="p">;</span>
+  <span class="n">werr</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">stump</span><span class="p">{</span><span class="nb">i</span><span class="p">}</span><span class="o">.</span><span class="n">werr</span><span class="p">;</span>
+<span class="k">end</span><span class="p">;</span>
+
+<span class="p">[</span><span class="n">min_werr</span><span class="p">,</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">werr</span><span class="p">);</span>
+
+<span class="n">stump</span> <span class="o">=</span> <span class="n">stump</span><span class="p">{</span><span class="n">ind</span><span class="p">(</span><span class="mi">1</span><span class="p">)};</span> <span class="c1">% return the best stump</span>
+
+
+<span class="c1">% build a stump from a single input component</span>
+
+<span class="k">function</span> <span class="p">[</span><span class="n">stump</span><span class="p">]</span> <span class="o">=</span> <span class="n">build_onedim_stump</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">w</span><span class="p">)</span>
+
+<span class="p">[</span><span class="n">xsorted</span><span class="p">,</span><span class="n">I</span><span class="p">]</span> <span class="o">=</span> <span class="nb">sort</span><span class="p">(</span><span class="n">x</span><span class="p">);</span> <span class="c1">% ascending</span>
+<span class="n">Ir</span> <span class="o">=</span> <span class="n">I</span><span class="p">(</span><span class="k">end</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">);</span> <span class="c1">% descending</span>
+
+<span class="n">score_left</span>  <span class="o">=</span> <span class="nb">cumsum</span><span class="p">(</span><span class="n">w</span><span class="p">(</span><span class="n">I</span><span class="p">)</span><span class="o">.*</span><span class="n">y</span><span class="p">(</span><span class="n">I</span><span class="p">));</span> <span class="c1">% left to right sums</span>
+<span class="n">score_right</span> <span class="o">=</span> <span class="nb">cumsum</span><span class="p">(</span><span class="n">w</span><span class="p">(</span><span class="n">Ir</span><span class="p">)</span><span class="o">.*</span><span class="n">y</span><span class="p">(</span><span class="n">Ir</span><span class="p">));</span>  <span class="c1">% right to left sums</span>
+
+<span class="c1">% score the -1 -&gt; 1 boundary between successive points</span>
+<span class="n">score</span> <span class="o">=</span> <span class="o">-</span><span class="n">score_left</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="k">end</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">score_right</span><span class="p">(</span><span class="k">end</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="c1">% find distinguishable points (possible boundary locations)</span>
+
+<span class="n">Idec</span> <span class="o">=</span> <span class="nb">find</span><span class="p">(</span> <span class="n">xsorted</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="k">end</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">&lt;</span><span class="n">xsorted</span><span class="p">(</span><span class="mi">2</span><span class="p">:</span><span class="k">end</span><span class="p">)</span> <span class="p">);</span>
+
+<span class="c1">% locate the boundary or give up</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">length</span><span class="p">(</span><span class="n">Idec</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">),</span>
+  <span class="p">[</span><span class="n">maxscore</span><span class="p">,</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span> <span class="nb">abs</span><span class="p">(</span><span class="n">score</span><span class="p">(</span><span class="n">Idec</span><span class="p">))</span> <span class="p">);</span> <span class="c1">% maximum weighted agreement</span>
+  <span class="n">ind</span> <span class="o">=</span> <span class="n">Idec</span><span class="p">(</span><span class="n">ind</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+
+  <span class="n">stump</span><span class="o">.</span><span class="n">werr</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">maxscore</span><span class="p">;</span> <span class="c1">% weighted error</span>
+  <span class="n">stump</span><span class="o">.</span><span class="n">x0</span>   <span class="o">=</span> <span class="p">(</span><span class="n">xsorted</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span><span class="o">+</span><span class="n">xsorted</span><span class="p">(</span><span class="n">ind</span><span class="o">+</span><span class="mi">1</span><span class="p">))/</span><span class="mi">2</span><span class="p">;</span> <span class="c1">% threshold</span>
+  <span class="n">stump</span><span class="o">.</span><span class="n">s</span>    <span class="o">=</span> <span class="nb">sign</span><span class="p">(</span><span class="n">score</span><span class="p">(</span><span class="n">ind</span><span class="p">));</span> <span class="c1">% direction of -1 -&gt; 1 change</span>
+<span class="k">else</span>
+  <span class="n">stump</span><span class="o">.</span><span class="n">werr</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">;</span>
+  <span class="n">stump</span><span class="o">.</span><span class="n">x0</span>   <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">stump</span><span class="o">.</span><span class="n">s</span>    <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="k">end</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="python">Python</h2>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#tree stump</span>
+<span class="k">class</span> <span class="nc">Stump</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weighted_error</span><span class="p">,</span> <span class="n">split</span><span class="p">,</span> <span class="n">dimension</span><span class="p">,</span> <span class="n">sign</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weighted_error</span> <span class="o">=</span> <span class="n">weighted_error</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">split</span> <span class="o">=</span> <span class="n">split</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dimension</span> <span class="o">=</span> <span class="n">dimension</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sign</span> <span class="o">=</span> <span class="n">sign</span>
+
+<span class="c">#####################################################################</span>
+<span class="c">#Build the Decision Tree Stump</span>
+<span class="c">#INPUT:    X_train -- the training features</span>
+<span class="c">#          y_train -- the training labels</span>
+<span class="c">#          w -- weight of each sample</span>
+<span class="c">#OUTPUT:   dtStump[index] -- the best split stump</span>
+<span class="c">#####################################################################</span>
+<span class="k">def</span> <span class="nf">build_DTStump</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">):</span>
+    <span class="n">dimension</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">dtStumps</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">weighted_error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">dimension</span><span class="p">)</span>
+    <span class="c">#initialise decision tree stumps for each dimension</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">dimension</span><span class="p">):</span>
+        <span class="n">dtStumps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">build_onedim_stump</span><span class="p">(</span><span class="n">X_train</span><span class="p">[:,</span><span class="n">i</span><span class="p">],</span><span class="n">y_train</span><span class="p">))</span>
+        <span class="n">dtStumps</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">dimension</span> <span class="o">=</span> <span class="n">i</span>
+        <span class="n">weighted_error</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">dtStumps</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">weighted_error</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">weighted_error</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dtStumps</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+<span class="c">#####################################################################</span>
+<span class="c">#Build one dimensional Decision Tree Stump</span>
+<span class="c">#INPUT:    X_train -- the training features</span>
+<span class="c">#          y_train -- the training labels</span>
+<span class="c">#          w -- weight of each sample</span>
+<span class="c">#OUTPUT:   dtStump -- the best split stump in this dimension</span>
+<span class="c">#####################################################################</span>
+<span class="k">def</span> <span class="nf">build_onedim_stump</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">stump</span> <span class="o">=</span> <span class="n">Stump</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span><span class="bp">None</span><span class="p">,</span><span class="bp">None</span><span class="p">,</span><span class="bp">None</span><span class="p">)</span>
+
+    <span class="n">sortedx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="c">#indices in ascending order</span>
+    <span class="n">I</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="c">#indices in descending order</span>
+    <span class="n">Ir</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="c">#left to right sums</span>
+    <span class="n">score_left</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">I</span><span class="p">])</span>
+    <span class="c">#right to left sums</span>
+    <span class="n">score_right</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">Ir</span><span class="p">])</span>
+
+    <span class="n">score</span> <span class="o">=</span> <span class="o">-</span><span class="n">score_left</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">score_right</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">))[</span><span class="mi">1</span><span class="p">:]</span>
+
+    <span class="n">indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">sortedx</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">sortedx</span><span class="p">[</span><span class="mi">1</span><span class="p">:])[:,</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="c">#locate the boundary</span>
+    <span class="k">if</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">indices</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="n">maxscore</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">score</span><span class="p">[</span><span class="n">indices</span><span class="p">]))</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">score</span><span class="p">[</span><span class="n">indices</span><span class="p">]))</span>
+        <span class="n">index</span>  <span class="o">=</span> <span class="n">indices</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+        <span class="n">stump</span><span class="o">.</span><span class="n">weighted_error</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">-</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">maxscore</span>
+        <span class="c">#get the split value</span>
+        <span class="n">stump</span><span class="o">.</span><span class="n">split</span> <span class="o">=</span> <span class="p">(</span><span class="n">sortedx</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">+</span><span class="n">sortedx</span><span class="p">[</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span>
+        <span class="n">stump</span><span class="o">.</span><span class="n">sign</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">score</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">stump</span><span class="o">.</span><span class="n">weighted_error</span> <span class="o">=</span> <span class="mf">0.5</span>
+        <span class="n">stump</span><span class="o">.</span><span class="n">split</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">stump</span><span class="o">.</span><span class="n">sign</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">stump</span>
+</code></pre></div></div>
+<hr />
+<p><br /></p>
+
+
+      <!-- Disqus Board -->
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+          /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+          var disqus_shortname = 'owenll66'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+      </script>
+      <noscript>Please enable JavaScript to view <a href="https://disqus.com/?ref_noscript">MewX comments powered by Disqus.</a></noscript>
+
+      <footer class="site-footer">
+        
+        <span class="site-footer-credits">Ⓒ 2019-2019 Owenll66 | powered by <a href="https://jekyllrb.com/">Jekyll</a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>
