@@ -49,6 +49,9 @@
 <h2 id="why-decision-stump-for-boosting-algorithms">Why decision stump for boosting algorithms?</h2>
 <p>When it comes to boosting algorithms, we have to talks about weak learners. Weak learners are algorithms in classification which can achieve slightly better than 50% accuracy. Boosting algorithms basically combine those weak learners and train them by using training data to learn the appropriate weights of each weak learner, to produce a strong classifier with high accuracy. A decision stump is a decision tree with only one depth (Please refer to decision tree algorithm). Due to it is a very simple weak learner and unlikely to occur overfitting, I would say it is a safe option to choose as weak classifier and the performance is usually good. Nonetheless, of course, you can choose other classifiers as weak learners and test them out.</p>
 
+<h2 id="what-if-the-prediction-accuracy-is-less-than-50">What if the prediction accuracy is less than 50%</h2>
+<p>In binary case: Easy! Just need to flip the labels from one to another. As you will see in the code.</p>
+
 <h2 id="matlab">Matlab</h2>
 <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">% build a stump from each component and return the best</span>
 <span class="k">function</span> <span class="p">[</span><span class="n">stump</span><span class="p">]</span> <span class="o">=</span> <span class="n">build_stump</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">w</span><span class="p">)</span>
