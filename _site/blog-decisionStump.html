@@ -44,7 +44,10 @@
 
 <h2 id="background">Background</h2>
 
-<p>I encountered this code when I was studying in the university on a machine learning course. I was intrigued by the succinct and concise code which was provided by my professor. It applies some mathematics and may look scary to understand at the first sight. However, you will find out the elegance of the code after you understand it.</p>
+<p>I encountered this code when I was studying in the university on a machine learning course. I was intrigued by the succinct and concise code which was provided by my professor and I personally translated it in to python. It applies some mathematics and may look scary to understand at the first sight. However, you will find out the elegance of the code after you comprehend it.</p>
+
+<h2 id="why-decision-stump-for-boosting-algorithms">Why decision stump for boosting algorithms?</h2>
+<p>When it comes to boosting algorithms, we have to talks about weak learners. Weak learners are algorithms in classification which can achieve slightly better than 50% accuracy. Boosting algorithms basically combine those weak learners and train them by using training data to learn the appropriate weights of each weak learner, to produce a strong classifier with high accuracy. A decision stump is a decision tree with only one depth (Please refer to decision tree algorithm).</p>
 
 <h2 id="matlab">Matlab</h2>
 <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">% build a stump from each component and return the best</span>
@@ -98,6 +101,16 @@
   <span class="n">stump</span><span class="o">.</span><span class="n">s</span>    <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="k">end</span><span class="p">;</span>
 </code></pre></div></div>
+<h2 id="code-essence">Code essence</h2>
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">score_left</span>  <span class="o">=</span> <span class="nb">cumsum</span><span class="p">(</span><span class="n">w</span><span class="p">(</span><span class="n">I</span><span class="p">)</span><span class="o">.*</span><span class="n">y</span><span class="p">(</span><span class="n">I</span><span class="p">));</span> <span class="c1">% left to right sums</span>
+<span class="n">score_right</span> <span class="o">=</span> <span class="nb">cumsum</span><span class="p">(</span><span class="n">w</span><span class="p">(</span><span class="n">Ir</span><span class="p">)</span><span class="o">.*</span><span class="n">y</span><span class="p">(</span><span class="n">Ir</span><span class="p">));</span>  <span class="c1">% right to left sums</span>
+
+<span class="c1">% score the -1 -&gt; 1 boundary between successive points</span>
+<span class="n">score</span> <span class="o">=</span> <span class="o">-</span><span class="n">score_left</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="k">end</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">score_right</span><span class="p">(</span><span class="k">end</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Explanation:
+“score_left” sums up all the weighted labels on the left of the split and “score_right” sums up all the weighted labels on the right of the split. And “score” is an array of “information gain” calculated for each split. Using “score” we can find the highest “information gain” which splits the data in order to have one type of weighted label (“+” or “-“) value as higher as possible on each side.</p>
 
 <h2 id="python">Python</h2>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#tree stump</span>
@@ -132,7 +145,7 @@
 <span class="c">#INPUT:    X_train -- the training features</span>
 <span class="c">#          y_train -- the training labels</span>
 <span class="c">#          w -- weight of each sample</span>
-<span class="c">#OUTPUT:   dtStump -- the best split stump in this dimension</span>
+<span class="c">#OUTPUT:   stump -- the best split stump in this dimension</span>
 <span class="c">#####################################################################</span>
 <span class="k">def</span> <span class="nf">build_onedim_stump</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
     <span class="n">stump</span> <span class="o">=</span> <span class="n">Stump</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span><span class="bp">None</span><span class="p">,</span><span class="bp">None</span><span class="p">,</span><span class="bp">None</span><span class="p">)</span>
@@ -167,8 +180,16 @@
         <span class="n">stump</span><span class="o">.</span><span class="n">sign</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="n">stump</span>
 </code></pre></div></div>
-<hr />
+<h2 id="discussion">Discussion</h2>
+<p>If using decision stump as weak learner, will the classifier still overfit?<br />
+The answer is YES! This blog is not going to talk about the mathematical mechanism behind this. But it is proven that if there are too many iterations on training, overfitting will still occur.
+<br /></p>
+
+<p>Please leave a comment if you have any questions or insights about this blog. Or if you would like to help construct this website, please Email <em>owen.liu_owen@qq.com</em>.</p>
+
 <p><br /></p>
+
+<hr />
 
 
       <!-- Disqus Board -->

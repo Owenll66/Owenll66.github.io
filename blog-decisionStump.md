@@ -6,7 +6,10 @@ layout: blog
 
 ## Background
 
-I encountered this code when I was studying in the university on a machine learning course. I was intrigued by the succinct and concise code which was provided by my professor. It applies some mathematics and may look scary to understand at the first sight. However, you will find out the elegance of the code after you understand it.
+I encountered this code when I was studying in the university on a machine learning course. I was intrigued by the succinct and concise code which was provided by my professor and I personally translated it in to python. It applies some mathematics and may look scary to understand at the first sight. However, you will find out the elegance of the code after you comprehend it.
+
+## Why decision stump for boosting algorithms?
+When it comes to boosting algorithms, we have to talks about weak learners. Weak learners are algorithms in classification which can achieve slightly better than 50% accuracy. Boosting algorithms basically combine those weak learners and train them by using training data to learn the appropriate weights of each weak learner, to produce a strong classifier with high accuracy. A decision stump is a decision tree with only one depth (Please refer to decision tree algorithm).
 
 ## Matlab
 ```matlab
@@ -61,8 +64,17 @@ else
   stump.s    = 1;
 end;
 ```
+## Code essence
+```matlab
+score_left  = cumsum(w(I).*y(I)); % left to right sums
+score_right = cumsum(w(Ir).*y(Ir));  % right to left sums
 
+% score the -1 -> 1 boundary between successive points
+score = -score_left(1:end-1) + score_right(end-1:-1:1);
+```
 
+Explanation:
+"score_left" sums up all the weighted labels on the left of the split and "score_right" sums up all the weighted labels on the right of the split. And "score" is an array of "information gain" calculated for each split. Using "score" we can find the highest "information gain" which splits the data in order to have one type of weighted label ("+" or "-") value as higher as possible on each side.
 
 ## Python
 ```python
@@ -98,7 +110,7 @@ def build_DTStump(X_train, y_train):
 #INPUT:    X_train -- the training features
 #          y_train -- the training labels
 #          w -- weight of each sample
-#OUTPUT:   dtStump -- the best split stump in this dimension
+#OUTPUT:   stump -- the best split stump in this dimension
 #####################################################################
 def build_onedim_stump(x,y):
     stump = Stump(None,None,None,None)
@@ -133,5 +145,13 @@ def build_onedim_stump(x,y):
         stump.sign = 1
     return stump
 ```
-***
+## Discussion
+If using decision stump as weak learner, will the classifier still overfit?<br>
+The answer is YES! This blog is not going to talk about the mathematical mechanism behind this. But it is proven that if there are too many iterations on training, overfitting will still occur.
 <br>
+
+Please leave a comment if you have any questions or insights about this blog. Or if you would like to help construct this website, please Email _owen.liu_owen@qq.com_.
+
+<br>
+
+***
