@@ -116,6 +116,7 @@
 “score_left” sums up all the weighted labels on the left of all the possible splits and “score_right” sums up all the weighted labels on the right of all the possible splits. And “score” is an array of “information gain” calculated for each split. Using “score” we can find the highest “information gain” which splits the data in order to have one type of weighted label (“+” or “-“) value as higher as possible on each side.</p>
 
 <h2 id="python">Python</h2>
+<p>Here is the code with the same logic that I translated into Python</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#tree stump</span>
 <span class="k">class</span> <span class="nc">Stump</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weighted_error</span><span class="p">,</span> <span class="n">split</span><span class="p">,</span> <span class="n">dimension</span><span class="p">,</span> <span class="n">sign</span><span class="p">):</span>

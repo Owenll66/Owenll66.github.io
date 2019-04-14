@@ -80,6 +80,7 @@ Explanation:
 "score_left" sums up all the weighted labels on the left of all the possible splits and "score_right" sums up all the weighted labels on the right of all the possible splits. And "score" is an array of "information gain" calculated for each split. Using "score" we can find the highest "information gain" which splits the data in order to have one type of weighted label ("+" or "-") value as higher as possible on each side.
 
 ## Python
+Here is the code with the same logic that I translated into Python
 ```python
 #tree stump
 class Stump:
