@@ -47,7 +47,7 @@
 <p>I encountered this code when I was studying in the university on a machine learning course. I was intrigued by the succinct and concise code which was provided by my professor and I personally translated it in to python. It applies some mathematics and may look scary to understand at the first sight. However, you will find out the elegance of the code after you comprehend it.</p>
 
 <h2 id="why-decision-stump-for-boosting-algorithms">Why decision stump for boosting algorithms?</h2>
-<p>When it comes to boosting algorithms, we have to talks about weak learners. Weak learners are algorithms in classification which can achieve slightly better than 50% accuracy. Boosting algorithms basically combine those weak learners and train them by using training data to learn the appropriate weights of each weak learner, to produce a strong classifier with high accuracy. A decision stump is a decision tree with only one depth (Please refer to decision tree algorithm).</p>
+<p>When it comes to boosting algorithms, we have to talks about weak learners. Weak learners are algorithms in classification which can achieve slightly better than 50% accuracy. Boosting algorithms basically combine those weak learners and train them by using training data to learn the appropriate weights of each weak learner, to produce a strong classifier with high accuracy. A decision stump is a decision tree with only one depth (Please refer to decision tree algorithm). Due to it is a very simple weak learner and unlikely to occur overfitting, I would say it is a safe option to choose as weak classifier and the performance is usually good. Nonetheless, of course, you can choose other classifiers as weak learners and test them out.</p>
 
 <h2 id="matlab">Matlab</h2>
 <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">% build a stump from each component and return the best</span>
@@ -110,7 +110,7 @@
 </code></pre></div></div>
 
 <p>Explanation:
-“score_left” sums up all the weighted labels on the left of the split and “score_right” sums up all the weighted labels on the right of the split. And “score” is an array of “information gain” calculated for each split. Using “score” we can find the highest “information gain” which splits the data in order to have one type of weighted label (“+” or “-“) value as higher as possible on each side.</p>
+“score_left” sums up all the weighted labels on the left of all the possible splits and “score_right” sums up all the weighted labels on the right of all the possible splits. And “score” is an array of “information gain” calculated for each split. Using “score” we can find the highest “information gain” which splits the data in order to have one type of weighted label (“+” or “-“) value as higher as possible on each side.</p>
 
 <h2 id="python">Python</h2>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#tree stump</span>
