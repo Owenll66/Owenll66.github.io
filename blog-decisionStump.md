@@ -74,7 +74,7 @@ score = -score_left(1:end-1) + score_right(end-1:-1:1);
 ```
 
 Explanation:
-"score_left" sums up all the weighted labels on the left of the split and "score_right" sums up all the weighted labels on the right of the split. And "score" is an array of "information gain" calculated for each split. Using "score" we can find the highest "information gain" which splits the data in order to have one type of weighted label ("+" or "-") value as higher as possible on each side.
+"score_left" sums up all the weighted labels on the left of all the possible splits and "score_right" sums up all the weighted labels on the right of all the possible splits. And "score" is an array of "information gain" calculated for each split. Using "score" we can find the highest "information gain" which splits the data in order to have one type of weighted label ("+" or "-") value as higher as possible on each side.
 
 ## Python
 ```python
