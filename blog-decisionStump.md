@@ -6,13 +6,27 @@ layout: blog
 
 ## Background
 
-I encountered this code when I was studying in the university on a machine learning course. I was intrigued by the succinct and concise code which was provided by my professor and I personally translated it in to python. It applies some mathematics and may look scary to understand at the first sight. However, you will find out the elegance of the code after you comprehend it.
+I encountered this code when I was studying in the university on a machine
+learning course. I was intrigued by the succinct and concise code which was
+provided by my professor and I personally translated it in to python. It applies
+some mathematics and may look scary to understand at the first sight. However,
+you will find out the elegance of the code after you comprehend it.
 
 ## Why decision stump for boosting algorithms?
-When it comes to boosting algorithms, we have to talks about weak learners. Weak learners are algorithms in classification which can achieve slightly better than 50% accuracy. Boosting algorithms basically combine those weak learners and train them by using training data to learn the appropriate weights of each weak learner, to produce a strong classifier with high accuracy. A decision stump is a decision tree with only one depth (Please refer to decision tree algorithm). Due to it is a very simple weak learner and unlikely to occur overfitting, I would say it is a safe option to choose as weak classifier and the performance is usually good. Nonetheless, of course, you can choose other classifiers as weak learners and test them out.
+When it comes to boosting algorithms, we have to talks about weak learners. Weak
+learners are algorithms in classification which can achieve slightly better than
+50% accuracy. Boosting algorithms basically combine those weak learners and
+train them by using training data to learn the appropriate weights of each weak
+learner, to produce a strong classifier with high accuracy. A decision stump is
+a decision tree with only one depth (Please refer to decision tree algorithm).
+Due to it is a very simple weak learner and unlikely to occur overfitting, I
+would say it is a safe option to choose as weak classifier and the performance
+is usually good. Nonetheless, of course, you can choose other classifiers as
+weak learners and test them out.
 
 ## What if the prediction accuracy is less than 50%
-In binary case: Easy! Just need to flip the labels from one to another. As you will see in the code.
+In binary case: Easy! Just need to flip the labels from one to another. As you
+will see in the code.
 
 ## Matlab
 ```matlab
@@ -77,7 +91,12 @@ score = -score_left(1:end-1) + score_right(end-1:-1:1);
 ```
 
 Explanation:
-"score_left" sums up all the weighted labels on the left of all the possible splits and "score_right" sums up all the weighted labels on the right of all the possible splits. And "score" is an array of "information gain" calculated for each split. Using "score" we can find the highest "information gain" which splits the data in order to have one type of weighted label ("+" or "-") value as higher as possible on each side.
+"score_left" sums up all the weighted labels on the left of all the possible
+splits and "score_right" sums up all the weighted labels on the right of all the
+possible splits. And "score" is an array of "information gain" calculated for
+each split. Using "score" we can find the highest "information gain" which
+splits the data in order to have one type of weighted label ("+" or "-") value
+as higher as possible on each side.
 
 ## Python
 Here is the code with the same logic that I translated into Python
@@ -151,10 +170,14 @@ def build_onedim_stump(x,y):
 ```
 ## Discussion
 If using decision stump as weak learner, will the classifier still overfit?<br>
-The answer is YES! This blog is not going to talk about the mathematical mechanism behind this. But it is proven that if there are too many iterations on training, overfitting will still occur.
+The answer is YES! This blog is not going to talk about the mathematical
+mechanism behind this. But it is proven that if there are too many iterations on
+training, overfitting will still occur.
 <br>
 
-Please leave a comment if you have any questions or insights about this blog. Or if you would like to help construct this website, please Email _owen.liu_owen@qq.com_.
+Please leave a comment if you have any questions or insights about this blog. Or
+if you would like to help construct this website, please Email
+_owen.liu_owen@qq.com_.
 
 <br>
 

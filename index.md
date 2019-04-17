@@ -12,3 +12,13 @@ Author: _owenll66_
 Published Date: 11/04/2019
 
 ***
+
+## [A simple encryption and decryption algorithm in python](./blog-encryption.html).
+
+A simple encryption and decryption algorithm in python is provided and available for download.
+
+<br>
+Author: _owenll66_  
+Published Date: 17/04/2019
+
+***
