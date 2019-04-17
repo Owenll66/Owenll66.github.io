@@ -126,14 +126,14 @@ a {
 
 }
 
-ul {
+.menu{
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
 
-ul li {
+.menu_li{
   float:left;
 }
 
@@ -230,9 +230,15 @@ li a:hover {
     max-width: 100%;
   }
 
-  h1,
-  h2,
-  h3,
+  h1{
+    color: $section-headings-color
+  }
+  h2{
+    color: #24acc1;
+  }
+  h3{
+    color: #33c68e;
+  }
   h4,
   h5,
   h6 {

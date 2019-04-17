@@ -98,7 +98,7 @@ each split. Using "score" we can find the highest "information gain" which
 splits the data in order to have one type of weighted label ("+" or "-") value
 as higher as possible on each side.
 
-## Python
+## Python3
 Here is the code with the same logic that I translated into Python
 ```python
 #tree stump
