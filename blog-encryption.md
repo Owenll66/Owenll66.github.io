@@ -184,15 +184,15 @@ while(choose == True):
 ```
 ## Run Example
 The text file to be encoded.  
-![poem](/images/poem.png)
+![poem](https://github.com/Owenll66/Owenll66.github.io/blob/master/images/poem.png)
 
 Run command "python3 encoder.py"
 
-![commandline1](/images/commandline1.png)
+![commandline1](https://github.com/Owenll66/Owenll66.github.io/blob/master/images/commandline1.png)
 
 ciphertext:
 
-![ciphertext](/images/ciphertext.png)
+![ciphertext](https://github.com/Owenll66/Owenll66.github.io/blob/master/images/ciphertext.png)
 
 
 ## Note
