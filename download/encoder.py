@@ -38,8 +38,9 @@ def encode(plainText):
         return ""
     #convert string to a list of chars
     charlist = list(plainText)
-    #the first element is the largest key
+    #the first number is the largest key's square
     ciphertext = str(keys[0] ** 2)
+    #the second number is the square of the key of the first letter
     ciphertext = ciphertext + " " + str(d.get(ord(charlist[0])) ** 2)
     for i in range(len(charlist)-1):
         ciphertext = ciphertext + " " + str(d.get(ord(charlist[i])) * d.get(ord(charlist[i+1])))
@@ -49,7 +50,7 @@ def encode(plainText):
 print("Which text file do you wannt to encrypt?")
 print("TIP: File type must be in .txt format")
 choose = True
-while(choose == True): 
+while(choose == True):
     try:
         filename = input()
         with open(filename, 'r') as rfile:
@@ -63,7 +64,7 @@ while(choose == True):
 print("\nPlease type output encrypted file name:")
 print("TIP: Please include \".txt\" at the end")
 choose = True
-while(choose == True): 
+while(choose == True):
     try:
         filename = input()
         with open(filename, 'w+') as rfile:

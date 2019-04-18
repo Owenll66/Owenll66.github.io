@@ -54,8 +54,9 @@ def encode(plainText):
         return ""
     #convert string to a list of chars
     charlist = list(plainText)
-    #the first element is the largest key
+    #the first number is the largest key's square
     ciphertext = str(keys[0] ** 2)
+    #the second number is the square of the key of the first letter
     ciphertext = ciphertext + " " + str(d.get(ord(charlist[0])) ** 2)
 
     for i in range(len(charlist)-1):
@@ -197,7 +198,7 @@ ciphertext:
 
 ## Note
 
-*   The encoding process is the similar to the encoding process.
+*   The decoding process is the similar to the encoding process.
 *   A File can be encoded multiply times (of course, if you want to decode it,
   need to decode it the same times as you encode it)
 *   If the file to be decoded is in the wrong format (cannot be decoded), the
