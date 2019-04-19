@@ -195,7 +195,7 @@ Run command "python3 encoder.py"
 
 ciphertext:
 
-![ciphertext](https://raw.githubusercontent.com/Owenll66/Owenll66.github.io/master/images/ciphertext.png?token=AI2RDJJ47S73GPT4RVRA6RC4YB5F6)
+![ciphertext](./images/ciphertext.png)
 
 
 ## Note
