@@ -47,6 +47,9 @@
 encode and decode the text.
 Let’s get straight to the code!</p>
 
+<h2 id="brief-explanation">Brief Explanation</h2>
+<p>The main idea is to map the prime number to the ASCII table. Each prime number represents  a character.  According to the feature that the if you factorise the product of two prime numbers, it can only be the two prime number themselves, which means the there is only one result.  Then we can chain up all the text by multiply the numbers next to each other. Finally, a sequence of numbers is the encoded ciphertext.</p>
+
 <h2 id="python3">Python3</h2>
 <h3 id="encoder">encoder</h3>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">random</span>
@@ -89,8 +92,9 @@ Let’s get straight to the code!</p>
         <span class="k">return</span> <span class="s">""</span>
     <span class="c">#convert string to a list of chars</span>
     <span class="n">charlist</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">plainText</span><span class="p">)</span>
-    <span class="c">#the first element is the largest key</span>
+    <span class="c">#the first number is the largest key's square</span>
     <span class="n">ciphertext</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">keys</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="c">#the second number is the square of the key of the first letter</span>
     <span class="n">ciphertext</span> <span class="o">=</span> <span class="n">ciphertext</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">charlist</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
 
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">charlist</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
@@ -231,15 +235,16 @@ Let’s get straight to the code!</p>
 <h2 id="note">Note</h2>
 
 <ul>
-  <li>The encoding process is the similar to the encoding process.</li>
+  <li>The decoding process is the similar to the encoding process.</li>
   <li>A File can be encoded multiply times (of course, if you want to decode it,
   need to decode it the same times as you encode it)</li>
   <li>If the file to be decoded is in the wrong format (cannot be decoded), the
 original content will be deleted!!! (not very friendly!)</li>
 </ul>
 
-<h2 id="explanation">Explanation</h2>
-<p>The main idea is to map the prime number to the ASCII table. Each prime number represents  a character According to the feature that the if you factorise the product of two prime numbers, it can only be the two prime number themselves, which means the there is only one result.  Then we can chain up all the text by multiply the numbers next to each other. Finally, a sequence of numbers is the encoded ciphertext.</p>
+<h2 id="download">Download</h2>
+
+<p><a href="./download/encoder.py" class="btn">Download encoder.py</a> <a href="./download/decoder.py" class="btn">Download decoder.py</a></p>
 
 <p><br /></p>
 

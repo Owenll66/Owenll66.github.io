@@ -10,6 +10,8 @@ The idea of the code was inspired by a Google Code Jam competition question in
 encode and decode the text.
 Let's get straight to the code!
 
+## Brief Explanation
+The main idea is to map the prime number to the ASCII table. Each prime number represents  a character.  According to the feature that the if you factorise the product of two prime numbers, it can only be the two prime number themselves, which means the there is only one result.  Then we can chain up all the text by multiply the numbers next to each other. Finally, a sequence of numbers is the encoded ciphertext.
 
 ## Python3
 ### encoder
@@ -204,9 +206,9 @@ ciphertext:
 *   If the file to be decoded is in the wrong format (cannot be decoded), the
 original content will be deleted!!! (not very friendly!)  
 
+## Download
 
-## Explanation
-The main idea is to map the prime number to the ASCII table. Each prime number represents  a character According to the feature that the if you factorise the product of two prime numbers, it can only be the two prime number themselves, which means the there is only one result.  Then we can chain up all the text by multiply the numbers next to each other. Finally, a sequence of numbers is the encoded ciphertext.
+[Download encoder.py](./download/encoder.py){:.btn} [Download decoder.py](./download/decoder.py){:.btn}
 
 <br>
 
