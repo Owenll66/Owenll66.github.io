@@ -105,11 +105,24 @@ a {
   }
 }
 
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	100% {
+		background-position: 100% 100%
+	}
+}
+
 .page-header {
   color: $header-heading-color;
   text-align: left;
-  background-color: $header-bg-color;
-  background-image: linear-gradient(120deg, $header-bg-color-secondary, $header-bg-color);
+  //background: linear-gradient(120deg, $header-bg-color-secondary, $header-bg-color);
+  //animation: 1s ease-out 0s 1 sweepToRight;
+  background: linear-gradient(-100deg, #23D5AB, #23A6D5, #E73C7E, #EE7752);
+	animation: Gradient 2s ease-out;
+  background-size:400% 400%;
+  background-position: 100%;
 
   @include large {
     padding: 2.5rem 2.5rem;
@@ -139,7 +152,13 @@ a {
 
 li a
 {
-  transition: .5s ease;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
+  background-repeat: no-repeat;
+  background-size: 100% 0;
+  background-position: bottom left;
+  transition: background-size 0.5s 0s;
+
+  //transition: .5s ease;
   padding: 10px 10px;
   font-size: 20px;
   display: block;
@@ -147,8 +166,7 @@ li a
 }
 
 li a:hover {
-  background-color: rgba(138, 118, 243, 0.5);
-  color: white;
+  background-size: 100% 100%;
   text-decoration: none;
 }
 
