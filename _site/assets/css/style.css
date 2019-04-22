@@ -571,7 +571,6 @@ th {
   box-sizing: border-box; }
 
 body {
-  background-image: url("../images/b.jpg");
   padding: 0;
   margin: 0;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -727,6 +726,10 @@ li a:hover {
     .main-content {
       padding: 2rem 1rem;
       font-size: 1rem; } }
+  .main-content .post {
+    margin: 0.5rem;
+    padding: 1.5rem;
+    background: rgba(208, 212, 219, 0.5); }
   .main-content kbd {
     background-color: #fafbfc;
     border: 1px solid #c6cbd1;

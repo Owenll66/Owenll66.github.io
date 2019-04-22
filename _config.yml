@@ -3,3 +3,7 @@ description:
 show_downloads: true
 google_analytics:
 theme: jekyll-theme-cayman
+
+#paging
+paginate: 8
+paginate_path: "/posts/page:num/"
