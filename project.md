@@ -1,4 +1,6 @@
 ---
 layout: default
-title: The project paging is under construction. Coming soon!
+title: The project paging is currently under construction. Coming soon!
 ---
+
+:)
