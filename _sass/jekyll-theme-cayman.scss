@@ -140,6 +140,22 @@ a {
 
 }
 
+.page-not-found{
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  @include large {
+    font-size: 2.75rem;
+  }
+  @include medium {
+    font-size: 2.00rem;
+  }
+
+  @include small {
+    font-size: 2.00rem;
+  }
+}
+
 .menu{
   list-style-type: none;
   margin: 0;

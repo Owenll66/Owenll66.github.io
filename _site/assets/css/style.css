@@ -656,6 +656,20 @@ a {
     .page-header {
       padding: 2rem 1rem; } }
 
+.page-not-found {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0; }
+  @media screen and (min-width: 64em) {
+    .page-not-found {
+      font-size: 2.75rem; } }
+  @media screen and (min-width: 42em) and (max-width: 64em) {
+    .page-not-found {
+      font-size: 2.00rem; } }
+  @media screen and (max-width: 42em) {
+    .page-not-found {
+      font-size: 2.00rem; } }
+
 .menu {
   list-style-type: none;
   margin: 0;
