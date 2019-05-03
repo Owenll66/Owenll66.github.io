@@ -892,8 +892,8 @@ li a:hover {
 
 /*style for the fun page*/
 #star-background {
-  height: 100%;
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  height: 150%;
+  background: radial-gradient(ellipse at bottom, #1b2735 20%, #090a0f 100%);
   overflow: hidden; }
 
 #stars {
