@@ -5,5 +5,7 @@ google_analytics:
 theme: jekyll-theme-cayman
 
 #paging
-paginate: 8
+paginate: 6
 paginate_path: "/posts/page:num/"
+
+highlighter: rouge
