@@ -10,3 +10,7 @@ paginate: 6
 paginate_path: "/posts/page:num/"
 
 highlighter: rouge
+
+#SEO
+plugins:
+  - jekyll-seo-tag

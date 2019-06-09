@@ -117,6 +117,7 @@ PLATFORMS
 DEPENDENCIES
   html-proofer (~> 3.0)
   jekyll-paginate
+  jekyll-seo-tag
   jekyll-theme-cayman!
   rubocop (~> 0.50)
   w3c_validators (~> 1.3)
