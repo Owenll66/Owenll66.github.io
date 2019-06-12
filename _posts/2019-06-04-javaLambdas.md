@@ -23,7 +23,7 @@ For example:
 * lambda expression works the same way as implementing a class
 * lambda expression only implements a function rather than a class
 * */
-HelloWorld lambdaHelloWorld = ()->System.out.println("Hell World from lambda expression");
+HelloWorld lambdaHelloWorld = ()->System.out.println("Hello World from lambda expression");
 //hello world from lambda ex
 //hello world from lambda expression
 lambdaHelloWorld.greet();
