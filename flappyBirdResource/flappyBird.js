@@ -28,6 +28,7 @@ var gravity = 1.5;
 
 var score = 0;
 
+var alerting = false;
 // audio files
 
 var fly = new Audio();
@@ -56,6 +57,7 @@ pipe[0] = {
 
 // draw images
 
+
 function draw(){
     
     ctx.drawImage(bg,0,0);
@@ -78,8 +80,11 @@ function draw(){
         // detect collision
         
         if( bX + bird.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && (bY <= pipe[i].y + pipeNorth.height || bY+bird.height >= pipe[i].y+constant) || bY + bird.height >=  cvs.height - fg.height){
-            if(!window.alert("Your score: " + score))
-            location.reload(); // reload the page
+            if(!window.alert("Your score: " + score) && alerting == false)
+            {
+                alerting = true;
+                location.reload(); // reload the page
+            }
         }
         
         if(pipe[i].x == 5){
