@@ -69,7 +69,7 @@ function draw(){
         ctx.drawImage(pipeSouth,pipe[i].x,pipe[i].y+constant);
              
         pipe[i].x = pipe[i].x - 1.5;
-        document.getElementById("debug").innerHTML = pipe[i].x;
+        //document.getElementById("debug").innerHTML = pipe[i].x;
         if( pipe[i].x == 48 ){
             pipe.push({
                 x : cvs.width,
