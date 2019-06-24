@@ -2,13 +2,42 @@
 <html>
   <head>
     <title>Flappy Bird</title>
+    <style type="text/css">
+    #container {height: 100%; width:100%; text-align:center; position:absolute;}
+    #left, #right {vertical-align:top; font-size:20px; display:inline-block;}
+    #left {width:30%; height:100%;}
+    #right {width:30%; height:100%;}
+    #specification{height: 20%}
+    #score-board{height: 70%; margin-top: 10%}
+    #first{color:red}
+    #second{color:green}
+    #third{color:blue}
+</style>
   </head>
   <body>
-   <h2 style="text-align:center">FlappyBird</h3>
+    <div id = "container">
+      <div id = "left">
+       <h2>FlappyBird</h2>
+       <canvas style="margin-left: auto; margin-right: auto; display: block;" id="canvas" width="285" height="512"></canvas>
+       <p>Press any key to fly<p>
+      </div>
 
-   <canvas style="margin-left: auto; margin-right: auto; display: block;" id="canvas" width="285" height="512"></canvas>
-   <p style="text-align:center">Press any key to fly<p>
+      <div id = "right">
+        <div id = "score-board">
+          <h2>Score Board</h2>
+          <P id = "1">1st: </p>
+          <P id = "2">2nd: </p>
+          <P id = "3">3rd: </p>
+          <P id = "4">4: </p>
+          <P id = "5">5: </p>
+          <P id = "6">6: </p>
+          <P id = "7">7: </p>
+          <P id = "8">8: </p>
+        </div>
+        <p class="specification">Please launch this game in Google Chrome. Currently cannot support mobile devices</p>
+      </div>
+    </div>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
    <script src="flappyBirdResource/flappyBird.js"></script>
-
   </body>
 </html>

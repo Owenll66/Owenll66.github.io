@@ -109,15 +109,15 @@ function draw(){
     
 }
 // read from scoreboard
-// function readFile(){
-//     //alert("Haha123");
-//     $.get('flappyBirdResource/scoreBoard.txt', function(data){
-//         // alert("Haha");
-//         // $('#1').text(data);
-//         $("#1").text("Jque");
-//     },'text');
-// }
+function readFile(){
+    //alert("Haha123");
+    $.get('flappyBirdResource/scoreBoard.txt', function(data){
+        // alert("Haha");
+        // $('#1').text(data);
+        $("#1").text("Jque");
+    },'text');
+}
 
-// readFile();
+readFile();
 draw();
 

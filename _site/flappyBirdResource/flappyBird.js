@@ -5,13 +5,13 @@ var ctx = cvs.getContext("2d");
 
 var bird = new Image();
 var bg = new Image();
-var fg = new Image();
+var ground = new Image();
 var pipeNorth = new Image();
 var pipeSouth = new Image();
 
 bird.src = "flappyBirdResource/images/bird.png";
 bg.src = "flappyBirdResource/images/bg.png";
-fg.src = "flappyBirdResource/images/fg.png";
+ground.src = "flappyBirdResource/images/fg.png";
 pipeNorth.src = "flappyBirdResource/images/pipeNorth.png";
 pipeSouth.src = "flappyBirdResource/images/pipeSouth.png";
 
@@ -56,19 +56,21 @@ pipe[0] = {
 
 // draw images
 
+
 function draw(){
     
+    var gameover = false;
+
     ctx.drawImage(bg,0,0);
-    
-    
+
     for(var i = 0; i < pipe.length; i++){
         constant = pipeNorth.height+gap;
         ctx.drawImage(pipeNorth,pipe[i].x,pipe[i].y);
         ctx.drawImage(pipeSouth,pipe[i].x,pipe[i].y+constant);
              
-        pipe[i].x--;
-        
-        if( pipe[i].x == 50 ){
+        pipe[i].x = pipe[i].x - 1.5;
+        //document.getElementById("debug").innerHTML = pipe[i].x;
+        if( pipe[i].x == 48 ){
             pipe.push({
                 x : cvs.width,
                 y : Math.floor(Math.random()*pipeNorth.height)-pipeNorth.height
@@ -77,19 +79,23 @@ function draw(){
 
         // detect collision
         
-        if( bX + bird.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && (bY <= pipe[i].y + pipeNorth.height || bY+bird.height >= pipe[i].y+constant) || bY + bird.height >=  cvs.height - fg.height){
-            location.reload(); // reload the page
+        if( bX + bird.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && (bY <= pipe[i].y + pipeNorth.height || bY+bird.height >= pipe[i].y+constant) || bY + bird.height >=  cvs.height - ground.height){
+            gameover = true;
         }
         
-        if(pipe[i].x == 5){
+        if(pipe[i].x == 3){
             score++;
             scor.play();
         }
-        
-        
     }
+    if(gameover)
+    {
+        window.alert("Your score: " + score);
+        location.reload(); // reload the page
+    }
+    
 
-    ctx.drawImage(fg,0,cvs.height - fg.height);
+    ctx.drawImage(ground,0,cvs.height - ground.height);
     
     ctx.drawImage(bird,bX,bY);
     
@@ -102,29 +108,16 @@ function draw(){
     requestAnimationFrame(draw);
     
 }
+// read from scoreboard
+// function readFile(){
+//     //alert("Haha123");
+//     $.get('flappyBirdResource/scoreBoard.txt', function(data){
+//         // alert("Haha");
+//         // $('#1').text(data);
+//         $("#1").text("Jque");
+//     },'text');
+// }
 
+// readFile();
 draw();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
