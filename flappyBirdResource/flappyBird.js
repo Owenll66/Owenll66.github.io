@@ -56,8 +56,7 @@ pipe[0] = {
 
 // draw images
 
-var gameOver = false;
-var firstTime = true;
+var gameOver = true;
 function draw(){
 
     ctx.drawImage(bg,0,0);
@@ -79,9 +78,11 @@ function draw(){
         // detect collision
         
         if( bX + bird.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && (bY <= pipe[i].y + pipeNorth.height || bY+bird.height >= pipe[i].y+constant) || bY + bird.height >=  cvs.height - ground.height){
-            if(firstTime)
+            if(gameOver)
             {
-                gameOver = true;
+                gameOver = false;
+                window.alert("Your score: " + score);
+                location.reload(); // reload the page
             }
         }
         
@@ -90,14 +91,7 @@ function draw(){
             scor.play();
         }
     }
-    if(gameOver && firstTime)
-    {
-        firstTime = false;
-        window.alert("Your score: " + score);
-        location.reload(); // reload the page
-    }
     
-
     ctx.drawImage(ground,0,cvs.height - ground.height);
     
     ctx.drawImage(bird,bX,bY);
