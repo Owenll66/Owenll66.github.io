@@ -12,6 +12,12 @@
     #first{color:red}
     #second{color:green}
     #third{color:blue}
+    table, th, td {
+      border: 1px solid black;
+    }
+    table{
+      width:100%
+    }
 </style>
   </head>
   <body>
@@ -25,9 +31,17 @@
       <div id = "right">
         <div id = "score-board">
           <h2>Score Board</h2>
-          <P id = "first">score: 21322 --  Owenll66</p>
-          <P id = "second">score: 12023 -- Anonymous</p>
-          <P id = "third">score: 11237 -- Amy</p>
+            <table>
+              <tr>
+                <td><P id = "first">1st: score: 21322 --  Owenll66</p></td>
+              </tr>
+              <tr>
+                  <td><P id = "second">2nd: score: 12023 -- Anonymous</p></td>
+              </tr>
+              <tr>
+                  <td><P id = "third">3rd: score: 11237 -- Amy</p></td>
+              </tr>
+            </table>
         </div>
         <p class="specification">Please launch this game in Google Chrome. Currently cannot support mobile devices</p>
       </div>
