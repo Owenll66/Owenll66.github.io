@@ -578,6 +578,10 @@ body {
   line-height: 1.5;
   color: #606c71; }
 
+.copyleft {
+  display: inline-block;
+  transform: rotate(180deg); }
+
 #skip-to-content {
   height: 1px;
   width: 1px;

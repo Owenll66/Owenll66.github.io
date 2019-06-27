@@ -56,10 +56,8 @@ pipe[0] = {
 
 // draw images
 
-
+var gameOver = true;
 function draw(){
-    
-    var gameover = false;
 
     ctx.drawImage(bg,0,0);
 
@@ -80,7 +78,12 @@ function draw(){
         // detect collision
         
         if( bX + bird.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && (bY <= pipe[i].y + pipeNorth.height || bY+bird.height >= pipe[i].y+constant) || bY + bird.height >=  cvs.height - ground.height){
-            gameover = true;
+            if(gameOver)
+            {
+                gameOver = false;
+                window.alert("Your score: " + score);
+                location.reload(); // reload the page
+            }
         }
         
         if(pipe[i].x == 3){
@@ -88,13 +91,7 @@ function draw(){
             scor.play();
         }
     }
-    if(gameover)
-    {
-        window.alert("Your score: " + score);
-        location.reload(); // reload the page
-    }
     
-
     ctx.drawImage(ground,0,cvs.height - ground.height);
     
     ctx.drawImage(bird,bX,bY);
@@ -108,16 +105,5 @@ function draw(){
     requestAnimationFrame(draw);
     
 }
-// read from scoreboard
-// function readFile(){
-//     //alert("Haha123");
-//     $.get('flappyBirdResource/scoreBoard.txt', function(data){
-//         // alert("Haha");
-//         // $('#1').text(data);
-//         $("#1").text("Jque");
-//     },'text');
-// }
-
-// readFile();
 draw();
 

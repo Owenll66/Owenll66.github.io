@@ -35,6 +35,11 @@ body {
   color: $body-text-color;
 }
 
+.copyleft {
+  display:inline-block;
+  transform: rotate(180deg);
+}
+
 #skip-to-content {
   height: 1px;
   width: 1px;
