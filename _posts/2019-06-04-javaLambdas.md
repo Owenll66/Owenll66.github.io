@@ -16,7 +16,7 @@ Lambdas introduces functional programming to Java which is known as an Object Or
 
 ### Define Lambda expressions
 
-Lambda enables assigning a block of code to a variable. Normally, a function needs to specify its scope, return type and function name. However, when you assign a code block using lambda expression, neither of these are needed.  
+Lambda enables assigning a block of code to a variable. Normally, a function needs to specify its scope, return type and function name. However, when a code block is assigned by using lambda expressions, neither of these are needed.  
 For example:
 ```java
 /* single line lambda expression does not need curly braces
