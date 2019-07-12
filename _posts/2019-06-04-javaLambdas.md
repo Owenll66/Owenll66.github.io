@@ -44,7 +44,7 @@ instance.greet();
 @FunctionalInterface
 interface HelloWorld {
     void greet();
-    default void hi() {
+    default void sayHi() {
         System.out.println("hi");
     }
 }
@@ -58,7 +58,7 @@ __NOTE:__
 if there is only one argument, we can eliminate the parentheses.  
 For example: p -> {System.out.println(p);};  
 
-if there is only statement, we can eliminate the curly braces.  
+if there is only one statement, we can eliminate the curly braces.  
 For example: p -> System.out.println(p);
 
 ### Pass lambda expressions as arguments
