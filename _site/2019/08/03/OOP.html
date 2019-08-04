@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143383051-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-143383051-1');
+      </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Brief Introduction to Object Oriented Programming Design | Owenll66’s blog site</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Brief Introduction to Object Oriented Programming Design" />
+<meta name="author" content="owenll66" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="OOP(Object Oriented Programming) is one of the most popular programming methodology. Understanding OOP principles is essential to all programmers. This blog will talk about some basic OOP design principles to help beginers to better comprehend what OOP is." />
+<meta property="og:description" content="OOP(Object Oriented Programming) is one of the most popular programming methodology. Understanding OOP principles is essential to all programmers. This blog will talk about some basic OOP design principles to help beginers to better comprehend what OOP is." />
+<link rel="canonical" href="http://localhost:4000/2019/08/03/OOP" />
+<meta property="og:url" content="http://localhost:4000/2019/08/03/OOP" />
+<meta property="og:site_name" content="Owenll66’s blog site" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-08-03T00:00:00+09:30" />
+<script type="application/ld+json">
+{"description":"OOP(Object Oriented Programming) is one of the most popular programming methodology. Understanding OOP principles is essential to all programmers. This blog will talk about some basic OOP design principles to help beginers to better comprehend what OOP is.","author":{"@type":"Person","name":"owenll66"},"@type":"BlogPosting","url":"http://localhost:4000/2019/08/03/OOP","headline":"Brief Introduction to Object Oriented Programming Design","dateModified":"2019-08-03T00:00:00+09:30","datePublished":"2019-08-03T00:00:00+09:30","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/08/03/OOP"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+    <header class="page-header" role="banner">
+
+      <h1 class="project-name">Brief Introduction to Object Oriented Programming Design</h1>
+      <h2 class="project-tagline"></h2>
+
+        
+        <ul class="menu">
+          <li class="menu_li"><a href="https://www.owenll66.com/">Blog</a></li>
+          <li class="menu_li"><a href="https://www.owenll66.com/project.html">Project</a></li>
+          <li class="menu_li"><a href="https://www.owenll66.com/about.html">About</a></li>
+          <li class="menu_li"><a href="https://www.owenll66.com/fun.html">Fun</a></li>
+          <li class="menu_li"><a href="https://www.owenll66.com/stars.html">Stars</a></li>
+        </ul>
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="brief-introduction-to-object-oriented-programming-design">Brief Introduction to Object Oriented Programming Design</h1>
+
+<h2 id="oop-vs-procedural-programming">OOP vs Procedural Programming</h2>
+<p>I actually wanted to start this section with the title “why OOP?”. Then I realised making a comparasion between Procedural Programming and OOP would better help you understand the merits of OOP over Procedural. The top down design methd is used in Procedural Programming. Generally, in this language such as C, a problem (a procedure) will be broken down into several sub problems (sub procedures), and those sub problems can be split into more sub problems until the big problem can be solved. Using this method would cause hard maintenance of the code when the stucture on the top of the hierarchy needs to be changed. However, in OOP languages, maintaining the code would be much easier because the modules are based on classes. But the tradeoff with OOP languages is that more code lines are needed than Procedural Programming.</p>
+
+<p>The examples are given in Java language, and here are some keypoints in OOP.</p>
+
+<h2 id="class--object">Class &amp; Object</h2>
+<p>A class is a user defined blueprint or prototype from which objects are created. It represents the set of properties or methods that are common to all objects of one type.</p>
+
+<h2 id="class-body">Class Body</h2>
+<p>A class body usually includes zero or more attributes to represent the properties of a object. In addition, one class can also have zero or more methods to represent the behaviours of the corresponding object.</p>
+
+<h3 id="attributes">Attributes</h3>
+<p>Attributes indicate what properities that a object has. For example, a “Human” object could have attributes such as “arms”, “legs”, “body” and “brain” etc. A car object could have attributes such as “wheels” and “chassis”. Naming a attribute of an object should be a noun rather than a objective or a verb. For instance, A “Human” object has attributes like “beautiful” or “run” would sounds inappropriate.</p>
+
+<h3 id="methods">Methods</h3>
+<p>Methods are the actions that a object can perform. For example, a “Human” object can perform actions such as “jump”, “run” and “shout”. Hence, the method name should be a verb ranther than “hair”, “nose” or “legs”.</p>
+
+<h2 id="abstraction--encapsulation">Abstraction &amp; Encapsulation</h2>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Robot</span>
+<span class="o">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">greeting</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hi, I am a robot"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">move</span><span class="o">();</span>
+    
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(!</span><span class="n">name</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">""</span><span class="o">))</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+        <span class="k">else</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nf">IllegalArgumentException</span><span class="o">(</span><span class="s">"Name cannot be Empty"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>A abstract class could have zero or more abstract methods. The abstract method must be implemented when creating instances. Encapsulation means attributes of a class shall be defined as “private” rather than “public”. This protects the attribute to be “safe”. In the example of above code, in Robot class, the “name” attribute is encapsulated as private. When calling the setter “setName”, this code will throw an  “IllegalArgumentException” exception when trying to pass an empty string as an argument. Now you might wonder what will happen if we do not encapsulate the attributes. Imagine if “name” is a public variable, then we can set the name to an empty string by “<code class="highlighter-rouge">object.name = "";</code>” without accessing through “setName” method. And this could be problematic when the name attribute is not expected to be empty.</p>
+
+<h2 id="inheritance--polymorphism">Inheritance &amp; Polymorphism</h2>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+
+      <!-- Disqus Board -->
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+          /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+          var disqus_shortname = 'owenll66'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+      </script>
+
+      <footer class="site-footer">
+        
+        <span class="site-footer-credits">Copyleft <span class="copyleft">&copy;</span> 2019-2019 Owenll66 |
+          powered by <a href="https://jekyllrb.com/">Jekyll</a>,
+          <a href="http://jekyllthemes.org/themes/cayman-theme/">Cayman Theme</a>
+          and <a href="https://pages.github.com/">Github Pages</a>
+        </span>
+      </footer>
+    </main>
+  </body>
+</html>
