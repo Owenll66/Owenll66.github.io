@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
   <head>
 
     
@@ -17,9 +17,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="/assets/css/style.css?v=">
     <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>Brief Introduction to Object Oriented Programming Design | Owenll66’s blog site</title>
+<title>Brief Introduction To Object Oriented Programming Design For Beginners | Owenll66’s blog site</title>
 <meta name="generator" content="Jekyll v3.7.4" />
-<meta property="og:title" content="Brief Introduction to Object Oriented Programming Design" />
+<meta property="og:title" content="Brief Introduction To Object Oriented Programming Design For Beginners" />
 <meta name="author" content="owenll66" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="OOP(Object Oriented Programming) is one of the most popular programming methodology. Understanding OOP principles is essential to all programmers. This blog will talk about some basic OOP design principles to help beginers to better comprehend what OOP is." />
@@ -30,7 +30,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-08-03T00:00:00+09:30" />
 <script type="application/ld+json">
-{"description":"OOP(Object Oriented Programming) is one of the most popular programming methodology. Understanding OOP principles is essential to all programmers. This blog will talk about some basic OOP design principles to help beginers to better comprehend what OOP is.","author":{"@type":"Person","name":"owenll66"},"@type":"BlogPosting","url":"http://localhost:4000/2019/08/03/OOP","headline":"Brief Introduction to Object Oriented Programming Design","dateModified":"2019-08-03T00:00:00+09:30","datePublished":"2019-08-03T00:00:00+09:30","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/08/03/OOP"},"@context":"http://schema.org"}</script>
+{"description":"OOP(Object Oriented Programming) is one of the most popular programming methodology. Understanding OOP principles is essential to all programmers. This blog will talk about some basic OOP design principles to help beginers to better comprehend what OOP is.","author":{"@type":"Person","name":"owenll66"},"@type":"BlogPosting","url":"http://localhost:4000/2019/08/03/OOP","headline":"Brief Introduction To Object Oriented Programming Design For Beginners","dateModified":"2019-08-03T00:00:00+09:30","datePublished":"2019-08-03T00:00:00+09:30","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/08/03/OOP"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -39,8 +39,7 @@
     <a id="skip-to-content" href="#content">Skip to the content.</a>
     <header class="page-header" role="banner">
 
-      <h1 class="project-name">Brief Introduction to Object Oriented Programming Design</h1>
-      <h2 class="project-tagline"></h2>
+      <h1 class="project-name">Brief Introduction To Object Oriented Programming Design For Beginners</h1>
 
         
         <ul class="menu">
@@ -53,10 +52,10 @@
     </header>
 
     <main id="content" class="main-content" role="main">
-      <h1 id="brief-introduction-to-object-oriented-programming-design">Brief Introduction to Object Oriented Programming Design</h1>
+      <h1 id="brief-introduction-to-object-oriented-programming-design-for-beginners">Brief Introduction To Object Oriented Programming Design For Beginners</h1>
 
 <h2 id="oop-vs-procedural-programming">OOP vs Procedural Programming</h2>
-<p>I actually wanted to start this section with the title “why OOP?”. Then I realised making a comparasion between Procedural Programming and OOP would better help you understand the merits of OOP over Procedural. The top down design methd is used in Procedural Programming. Generally, in this language such as C, a problem (a procedure) will be broken down into several sub problems (sub procedures), and those sub problems can be split into more sub problems until the big problem can be solved. Using this method would cause hard maintenance of the code when the stucture on the top of the hierarchy needs to be changed. However, in OOP languages, maintaining the code would be much easier because the modules are based on classes. But the tradeoff with OOP languages is that more code lines are needed than Procedural Programming.</p>
+<p>I actually wanted to start this section with the title “why OOP?”. Then I realised making a comparasion between Procedural Programming and OOP would better help you understand the merits of OOP over Procedural. The top down design methd is used in Procedural Programming. Generally, in this language such as C, a problem (a procedure) will be broken down into several sub problems (sub procedures), and those sub problems can be split into more sub problems until the big problem can be solved. Using this method would cause hard maintenance of the code when the structure on the top of the hierarchy needs to be changed. However, in OOP languages, maintaining the code would be much easier because the modules are based on classes. But the tradeoff with OOP languages is that more code lines are needed than Procedural Programming.</p>
 
 <p>The examples are given in Java language, and here are some keypoints in OOP.</p>
 
@@ -101,8 +100,32 @@
 <p>A abstract class could have zero or more abstract methods. The abstract method must be implemented when creating instances. Encapsulation means attributes of a class shall be defined as “private” rather than “public”. This protects the attribute to be “safe”. In the example of above code, in Robot class, the “name” attribute is encapsulated as private. When calling the setter “setName”, this code will throw an  “IllegalArgumentException” exception when trying to pass an empty string as an argument. Now you might wonder what will happen if we do not encapsulate the attributes. Imagine if “name” is a public variable, then we can set the name to an empty string by “<code class="highlighter-rouge">object.name = "";</code>” without accessing through “setName” method. And this could be problematic when the name attribute is not expected to be empty.</p>
 
 <h2 id="inheritance--polymorphism">Inheritance &amp; Polymorphism</h2>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">CatBot</span> <span class="kd">extends</span> <span class="n">Robot</span>
+<span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">move</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"moving like a cat"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">HumanBot</span> <span class="kd">extends</span> <span class="n">Robot</span>
+<span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">move</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"walking like a human"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>As the code shown above, there are two classes (“HumanBot” and “CatBot”) inherited from Robot class. That means they have some same behaviours such as the method “greeting”. However they implentment the “move” method differently, which is the essence of polymorphism. Polymorphism basically means there are several classes inherited from the same class, but they behave differently. Another example would be, class “Bird” and class “Tiger” are inherited from “Animal” class. But obviously they are different animals which indicate polymorphism.</p>
+
+<h2 id="additional-notes">Additional Notes</h2>
+<p>The basic features of OOP are briefly introduced above. However, Java is a elegant language worth exploring. Questions such as “What are interfaces in Java?”, “Does Java support multiple inheritance?” and  “What is the diamond problem? and how Java handles it?” need you to discover the answers.</p>
+
+<p>If you have any question about this blog, please leave a comment.</p>
 
 <p><br /></p>
 

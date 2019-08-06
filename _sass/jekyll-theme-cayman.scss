@@ -194,7 +194,7 @@ li a:hover {
 
 .project-name {
   margin-top: 0;
-  margin-bottom: 2 rem;
+  margin-bottom: 3rem;
   margin-left: 10px;
   @include large {
     font-size: 1.75rem;
@@ -206,24 +206,6 @@ li a:hover {
 
   @include small {
     font-size: 1.50rem;
-  }
-}
-
-.project-tagline {
-  margin-bottom: 2rem;
-  font-weight: normal;
-  opacity: 0.7;
-
-  @include large {
-    font-size: 1.00rem;
-  }
-
-  @include medium {
-    font-size: 1.15rem;
-  }
-
-  @include small {
-    font-size: 1rem;
   }
 }
 
