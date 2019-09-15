@@ -19,11 +19,11 @@ Download Visual Studio Code on https://code.visualstudio.com/download
 ## Step Three: Replace "ffmpeg.dll" under VSC directory
 
 For Windows: 
-[ffmpeg.dll](https://www.owenll66.com/blog-res/blog-neteaseMusicOnVSC/ffmpeg.dll){:.btn}  
+[Download ffmpeg.dll](https://www.owenll66.com/blog-res/blog-neteaseMusicOnVSC/ffmpeg.dll){:.btn}  
 Replace: ./ffmpeg.dll
 
 For MacOS:
-[libffmpeg.dylib](https://www.owenll66.com/blog-res/blog-neteaseMusicOnVSC/libffmpeg.dylib){:.btn}  
+[Download libffmpeg.dylib](https://www.owenll66.com/blog-res/blog-neteaseMusicOnVSC/libffmpeg.dylib){:.btn}  
 Replace: /Contents/Frameworks/Electron\ Framework.framework/Versions/A/Libraries/libffmpeg.dylib
 
 ## Step Four: Get Started
