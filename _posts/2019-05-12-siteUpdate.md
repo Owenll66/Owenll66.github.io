@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: Website updated!
+title: Website Updated!
 description: website source code available!
 
 author: owenll66
