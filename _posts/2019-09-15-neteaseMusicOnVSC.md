@@ -21,7 +21,7 @@ Download Visual Studio Code on https://code.visualstudio.com/download
 For Windows:  
 
 [Download ffmpeg.dll](https://www.owenll66.com/blog-res/blog-neteaseMusicOnVSC/ffmpeg.dll){:.btn}  
-Replace: ./ffmpeg.dll
+Replace: /ffmpeg.dll
 
 For MacOS:  
 
@@ -51,7 +51,8 @@ Enter `NeteaseMusic` to start exploring :D
 * `NeteaseMusic.SSL.strict`: enable / disable SSL certificate checking
 * `NeteaseMusic.CDN.redirect`: enable / disable CDN rediection
 
-Source: https://github.com/nondanee/vsc-netease-music
+Source: https://github.com/nondanee/vsc-netease-music  
+
 <br> 
 
 ***
