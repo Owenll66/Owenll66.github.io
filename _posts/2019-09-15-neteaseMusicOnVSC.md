@@ -1,12 +1,12 @@
 ---
 layout: blog
-title: How to play music on Visual Studio Code - Free music plugin provided by Netease Music
+title: How to play music on Visual Studio Code - A Free music plugin
 description: This blog will introduce the steps to install Netease Music plugin to VSC
 
 author: owenll66
 ---
 
-# How to play music on Visual Studio Code - Free music plugin provided by Netease Music
+# How to play music on Visual Studio Code - A Free music plugin
 
 ## Here are the steps to install NeteaseMusic plugin
 
