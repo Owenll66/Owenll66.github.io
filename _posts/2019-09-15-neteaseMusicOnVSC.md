@@ -28,8 +28,7 @@ Replace: /ffmpeg.dll
 For MacOS:  
 
 [Download libffmpeg.dylib](https://www.owenll66.com/blog-res/blog-neteaseMusicOnVSC/libffmpeg.dylib){:.btn}  
-Replace: /Contents/Frameworks/Electron\ Framework.framework/Versions/A/Libraries/libffmpeg.dylib
-
+Replace: /Contents/Frameworks/Electron\ Framework.framework/Libraries/libffmpeg.dylib
 ## Step Four: Get Started
 
 ### Usage
