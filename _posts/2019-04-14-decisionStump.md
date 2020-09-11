@@ -10,18 +10,17 @@ author: owenll66
 
 ## Background
 
-I encountered this code when I was studying in the university on a machine
-learning course. I was intrigued by the succinct and concise code which was
-provided by my professor and I personally translated it in to python. It applies
-some mathematics and may look scary to understand at the first sight. However,
-you will find out the elegance of the code after you comprehend it.
+I encountered this code when I was studying uni. The code logic was very intriguing 
+and I personally translated it in to python. It applies some mathematics and may look 
+scary to understand at the first sight. However, you will find out the elegance of 
+the code after you comprehend it.
 
 ## Why decision stump for boosting algorithms?
 When it comes to boosting algorithms, we have to talks about weak learners. Weak
 learners are algorithms in classification which can achieve slightly better than
 50% accuracy. Boosting algorithms basically combine those weak learners and
-train them by using training data to learn the appropriate weights of each weak
-learner, to produce a strong classifier with high accuracy. A decision stump is
+train them by using training data to obtain the appropriate weights of each weak
+learner, to produce a strong classifier with a high accuracy. A decision stump is
 a decision tree with only one depth (Please refer to decision tree algorithm).
 Due to it is a very simple weak learner and unlikely to occur overfitting, I
 would say it is a safe option to choose as weak classifier and the performance
