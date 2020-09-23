@@ -180,7 +180,7 @@ training, overfitting will still occur.
 
 Please leave a comment if you have any questions or insights about this blog. Or
 if you would like to help construct this website, please Email
-_owen.liu_owen@qq.com_.
+_bowen.liu_owen@qq.com_.
 
 <br>
 
