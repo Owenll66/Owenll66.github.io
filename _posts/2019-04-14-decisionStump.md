@@ -1,7 +1,8 @@
 ---
-layout: blog
-title: A Succinct Solution For Building Decision Stumps
-description: Decision stumps are simple and good weak learners which could be applied in Boosting algorithms. This blog provides both matlab code and python for building decision stumps.
+layout: blog title: A Succinct Solution For Building Decision Stumps
+description: Decision stumps are simple and good weak learners which could be
+applied in Boosting algorithms. This blog provides both matlab code and python
+for building decision stumps.
 
 author: owenll66
 ---
@@ -10,22 +11,22 @@ author: owenll66
 
 ## Background
 
-I encountered this code when I was studying uni. The code logic was very intriguing 
-and I personally translated it in to python. It applies some mathematics and may look 
-scary to understand at the first sight. However, you will find out the elegance of 
-the code after you comprehend it.
+I encountered this code when I was studying uni. The code logic was very
+intriguing and I personally translated it in to python. It applies some
+mathematics and may look scary to understand at the first sight. However, you
+will find out the elegance of the code after you comprehend it.
 
 ## Why decision stump for boosting algorithms?
 When it comes to boosting algorithms, we have to talk about weak learners. Weak
 learners are algorithms in classification which can achieve slightly better than
 50% accuracy. Boosting algorithms basically combine those weak learners and
 train them by using training data to obtain the appropriate weights of each weak
-learner, to produce a strong classifier with a high accuracy. A decision stump is
-a decision tree with only one depth (Please refer to decision tree algorithm).
-Due to it is a very simple weak learner and unlikely to occur overfitting, it would 
-be a safe option to choose as weak classifier and the performance
-is usually good. Nonetheless, of course, you can choose other classifiers as
-weak learners and test them out.
+learner, to produce a strong classifier with a high accuracy. A decision stump
+is a decision tree with only one depth (Please refer to decision tree
+algorithm). Due to it is a very simple weak learner and unlikely to occur
+overfitting, it would be a safe option to choose as weak classifier and the
+performance is usually good. Nonetheless, of course, you can choose other
+classifiers as weak learners and test them out.
 
 ## What if the prediction accuracy is less than 50%
 In binary case: Easy! Just need to flip the labels from one to another. As you
@@ -93,13 +94,12 @@ score_right = cumsum(w(Ir).*y(Ir));  % right to left sums
 score = -score_left(1:end-1) + score_right(end-1:-1:1);
 ```
 
-Explanation:
-"score_left" sums up all the weighted labels on the left of all the possible
-splits and "score_right" sums up all the weighted labels on the right of all the
-possible splits. And "score" is an array of "information gain" calculated for
-each split. Using "score" we can find the highest "information gain" which
-splits the data in order to have one type of weighted label ("+" or "-") value
-as higher as possible on each side.
+Explanation: "score_left" sums up all the weighted labels on the left of all the
+possible splits and "score_right" sums up all the weighted labels on the right
+of all the possible splits. And "score" is an array of "information gain"
+calculated for each split. Using "score" we can find the highest "information
+gain" which splits the data in order to have one type of weighted label ("+" or
+"-") value as higher as possible on each side.
 
 ## Python3
 Here is the code with the same logic that I translated into Python
@@ -175,8 +175,7 @@ def build_onedim_stump(x,y):
 If using decision stump as weak learner, will the classifier still overfit?<br>
 The answer is YES! This blog is not going to talk about the mathematical
 mechanism behind this. But it is proven that if there are too many iterations on
-training, overfitting will still occur.
-<br>
+training, overfitting will still occur. <br>
 
 Please leave a comment if you have any questions or insights about this blog. Or
 if you would like to help construct this website, please Email
