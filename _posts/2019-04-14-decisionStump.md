@@ -22,8 +22,8 @@ learners are algorithms in classification which can achieve slightly better than
 train them by using training data to obtain the appropriate weights of each weak
 learner, to produce a strong classifier with a high accuracy. A decision stump is
 a decision tree with only one depth (Please refer to decision tree algorithm).
-Due to it is a very simple weak learner and unlikely to occur overfitting, I
-would say it is a safe option to choose as weak classifier and the performance
+Due to it is a very simple weak learner and unlikely to occur overfitting, it would 
+be a safe option to choose as weak classifier and the performance
 is usually good. Nonetheless, of course, you can choose other classifiers as
 weak learners and test them out.
 
@@ -84,7 +84,7 @@ else
   stump.s    = 1;
 end;
 ```
-## Code essence
+## Core idea
 ```matlab
 score_left  = cumsum(w(I).*y(I)); % left to right sums
 score_right = cumsum(w(Ir).*y(Ir));  % right to left sums
