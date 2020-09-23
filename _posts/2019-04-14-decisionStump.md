@@ -1,8 +1,8 @@
 ---
-layout: blog title: A Succinct Solution For Building Decision Stumps
-description: Decision stumps are simple and good weak learners which could be
-applied in Boosting algorithms. This blog provides both matlab code and python
-for building decision stumps.
+layout: blog
+blog title: A Succinct Solution For Building Decision Stumps
+description: Decision stumps are simple and good weak learners which could be applied in Boosting algorithms. This blog provides both matlab code and python for building decision stumps.
+
 author: owenll66
 ---
 

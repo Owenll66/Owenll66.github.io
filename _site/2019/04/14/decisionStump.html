@@ -18,9 +18,9 @@
     <link rel="shortcut icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" href="/assets/css/style.css?v=">
     <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>A Succinct Solution For Building Decision Stumps | Owenll66’s Blog Site</title>
+<title>Decisionstump | Owenll66’s Blog Site</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="A Succinct Solution For Building Decision Stumps" />
+<meta property="og:title" content="Decisionstump" />
 <meta name="author" content="owenll66" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Decision stumps are simple and good weak learners which could be applied in Boosting algorithms. This blog provides both matlab code and python for building decision stumps." />
@@ -31,7 +31,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-04-14T00:00:00+09:30" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","author":{"@type":"Person","name":"owenll66"},"url":"http://localhost:4000/2019/04/14/decisionStump","headline":"A Succinct Solution For Building Decision Stumps","dateModified":"2019-04-14T00:00:00+09:30","datePublished":"2019-04-14T00:00:00+09:30","description":"Decision stumps are simple and good weak learners which could be applied in Boosting algorithms. This blog provides both matlab code and python for building decision stumps.","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/04/14/decisionStump"},"@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"owenll66"},"url":"http://localhost:4000/2019/04/14/decisionStump","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/04/14/decisionStump"},"headline":"Decisionstump","dateModified":"2019-04-14T00:00:00+09:30","datePublished":"2019-04-14T00:00:00+09:30","description":"Decision stumps are simple and good weak learners which could be applied in Boosting algorithms. This blog provides both matlab code and python for building decision stumps.","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -40,7 +40,7 @@
     <a id="skip-to-content" href="#content">Skip to the content.</a>
     <header class="page-header" role="banner">
 
-      <h1 class="project-name">A Succinct Solution For Building Decision Stumps</h1>
+      <h1 class="project-name">Decisionstump</h1>
 
         
         <ul class="menu">
@@ -57,22 +57,22 @@
 
 <h2 id="background">Background</h2>
 
-<p>I encountered this code when I was studying uni. The code logic was very intriguing 
-and I personally translated it in to python. It applies some mathematics and may look 
-scary to understand at the first sight. However, you will find out the elegance of 
-the code after you comprehend it.</p>
+<p>I encountered this code when I was studying uni. The code logic was very
+intriguing and I personally translated it in to python. It applies some
+mathematics and may look scary to understand at the first sight. However, you
+will find out the elegance of the code after you comprehend it.</p>
 
 <h2 id="why-decision-stump-for-boosting-algorithms">Why decision stump for boosting algorithms?</h2>
-<p>When it comes to boosting algorithms, we have to talks about weak learners. Weak
+<p>When it comes to boosting algorithms, we have to talk about weak learners. Weak
 learners are algorithms in classification which can achieve slightly better than
 50% accuracy. Boosting algorithms basically combine those weak learners and
 train them by using training data to obtain the appropriate weights of each weak
-learner, to produce a strong classifier with a high accuracy. A decision stump is
-a decision tree with only one depth (Please refer to decision tree algorithm).
-Due to it is a very simple weak learner and unlikely to occur overfitting, I
-would say it is a safe option to choose as weak classifier and the performance
-is usually good. Nonetheless, of course, you can choose other classifiers as
-weak learners and test them out.</p>
+learner, to produce a strong classifier with a high accuracy. A decision stump
+is a decision tree with only one depth (Please refer to decision tree
+algorithm). Due to it is a very simple weak learner and unlikely to occur
+overfitting, it would be a safe option to choose as weak classifier and the
+performance is usually good. Nonetheless, of course, you can choose other
+classifiers as weak learners and test them out.</p>
 
 <h2 id="what-if-the-prediction-accuracy-is-less-than-50">What if the prediction accuracy is less than 50%</h2>
 <p>In binary case: Easy! Just need to flip the labels from one to another. As you
@@ -130,7 +130,7 @@ will see in the code.</p>
   <span class="n">stump</span><span class="o">.</span><span class="n">s</span>    <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="k">end</span><span class="p">;</span>
 </code></pre></div></div>
-<h2 id="code-essence">Code essence</h2>
+<h2 id="core-idea">Core idea</h2>
 <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">score_left</span>  <span class="o">=</span> <span class="nb">cumsum</span><span class="p">(</span><span class="n">w</span><span class="p">(</span><span class="n">I</span><span class="p">)</span><span class="o">.*</span><span class="n">y</span><span class="p">(</span><span class="n">I</span><span class="p">));</span> <span class="c1">% left to right sums</span>
 <span class="n">score_right</span> <span class="o">=</span> <span class="nb">cumsum</span><span class="p">(</span><span class="n">w</span><span class="p">(</span><span class="n">Ir</span><span class="p">)</span><span class="o">.*</span><span class="n">y</span><span class="p">(</span><span class="n">Ir</span><span class="p">));</span>  <span class="c1">% right to left sums</span>
 
@@ -138,13 +138,12 @@ will see in the code.</p>
 <span class="n">score</span> <span class="o">=</span> <span class="o">-</span><span class="n">score_left</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="k">end</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">score_right</span><span class="p">(</span><span class="k">end</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">);</span>
 </code></pre></div></div>
 
-<p>Explanation:
-“score_left” sums up all the weighted labels on the left of all the possible
-splits and “score_right” sums up all the weighted labels on the right of all the
-possible splits. And “score” is an array of “information gain” calculated for
-each split. Using “score” we can find the highest “information gain” which
-splits the data in order to have one type of weighted label (“+” or “-“) value
-as higher as possible on each side.</p>
+<p>Explanation: “score_left” sums up all the weighted labels on the left of all the
+possible splits and “score_right” sums up all the weighted labels on the right
+of all the possible splits. And “score” is an array of “information gain”
+calculated for each split. Using “score” we can find the highest “information
+gain” which splits the data in order to have one type of weighted label (“+” or
+“-“) value as higher as possible on each side.</p>
 
 <h2 id="python3">Python3</h2>
 <p>Here is the code with the same logic that I translated into Python</p>
@@ -219,12 +218,11 @@ as higher as possible on each side.</p>
 <p>If using decision stump as weak learner, will the classifier still overfit?<br />
 The answer is YES! This blog is not going to talk about the mathematical
 mechanism behind this. But it is proven that if there are too many iterations on
-training, overfitting will still occur.
-<br /></p>
+training, overfitting will still occur. <br /></p>
 
 <p>Please leave a comment if you have any questions or insights about this blog. Or
 if you would like to help construct this website, please Email
-<em>owen.liu_owen@qq.com</em>.</p>
+<em>bowen.liu_owen@qq.com</em>.</p>
 
 <p><br /></p>
 
