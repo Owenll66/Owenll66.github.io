@@ -16,7 +16,7 @@ scary to understand at the first sight. However, you will find out the elegance 
 the code after you comprehend it.
 
 ## Why decision stump for boosting algorithms?
-When it comes to boosting algorithms, we have to talks about weak learners. Weak
+When it comes to boosting algorithms, we have to talk about weak learners. Weak
 learners are algorithms in classification which can achieve slightly better than
 50% accuracy. Boosting algorithms basically combine those weak learners and
 train them by using training data to obtain the appropriate weights of each weak
