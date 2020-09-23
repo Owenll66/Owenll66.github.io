@@ -10,7 +10,7 @@ author: owenll66
 
 ## Background
 The idea of the code was inspired by a Google Code Jam competition question in
-2019 which is called "Cryptopangrams". Using the feature of prime numbers to
+2019 called "Cryptopangrams". Using the feature of prime numbers to
 encode and decode the text. The idea is intriguing and I decided to write the encryption and decryption algorithms by myself. You are welcome to leave a comment if you think there is anything could be improved.
 
 ## Brief Explanation
