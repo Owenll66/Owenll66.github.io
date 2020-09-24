@@ -119,11 +119,11 @@ class Stump:
 #OUTPUT:   dtStump[index] -- the best split stump
 #####################################################################
 def build_DTStump(X_train, y_train):
-    dimension = X_train.shape[1]
+    dimension_num = X_train.shape[1]
     dtStumps = []
-    weighted_error = np.zeros(dimension)
+    weighted_error = np.zeros(dimension_num)
     #initialise decision tree stumps for each dimension
-    for i in range(dimension):
+    for i in range(dimension_num):
         dtStumps.append(build_onedim_stump(X_train[:,i],y_train))
         dtStumps[i].dimension = i
         weighted_error[i] = dtStumps[i].weighted_error
