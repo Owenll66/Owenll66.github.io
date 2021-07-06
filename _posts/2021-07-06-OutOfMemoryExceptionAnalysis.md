@@ -34,7 +34,7 @@ OutOfMemoryException will be thrown when there is not enough chuck of memory for
 
 ![OOM1](https://www.owenll66.com/blog-res/blog-OOM/OOM1.png)
 
-* If the memory keeps increasing, it is very likely there are memory leaks in the system. Eventually it will crash at a certain point. As a programmer, be aware of these spots which running at the back ground to update or remove the data. The unmanaged objects to be updated or removed must be disposed/released explicitly in code. Otherwise they will remain in the memory.
+* If the memory keeps increasing, it is very likely there are memory leaks in the system. Eventually it will crash at a certain point. As a programmer, be aware of the spots which running at the background and doing update or remove operation. The unmanaged objects to be updated or removed must be disposed/released explicitly in code. Otherwise they will remain in the memory util the software process is killed or stopped.
 
 ![OOM2](https://www.owenll66.com/blog-res/blog-OOM/OOM2.png)
 
