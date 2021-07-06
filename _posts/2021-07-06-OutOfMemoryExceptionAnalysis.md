@@ -12,7 +12,7 @@ author: owenll66
 
 ## What is OutOfMemory?
 
-OutOfMemoryException will be thrown when there is not enough chuck of memory for the program to allocate. And the stack traces sometime can be not very helpful as the location of the exception is thrown could be anywhere the program tries to allocate memory while there is not enough.
+OutOfMemoryException will be thrown when there is not enough chuck of memory for the program to allocate. The problem can be tricky sometimes as the stack traces are not always pointing to the right places due to the location of the exception thrown could be anywhere the program tries to allocate memory while there is not enough.
 
 ## The causes of this type of exception can be summarised as below:
 
