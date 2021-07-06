@@ -10,15 +10,11 @@ author: owenll66
 
 # What is OutOfMemory exception? How to identify them? How to avoid?
 
-## Background
-
-I was assigned to address this the 
-
 ## What is OutOfMemory?
 
 OutOfMemoryException will be thrown when there is not enough chuck of memory for the program to allocate. And the stack traces sometime can be not very helpful as the location of the exception is thrown could be anywhere the program tries to allocate memory while there is not enough.
 
-**The causes of this type of exception can be summarised as below:**
+## The causes of this type of exception can be summarised as below:
 
 * the software itself it is very memory consuming. In this scenario, we cannot do much from the software side but to upgrade the hardware.
 
@@ -26,13 +22,13 @@ OutOfMemoryException will be thrown when there is not enough chuck of memory for
 
 * Low memory performance due to poorly coded algorithms in the software.  
 
-**To identify the causes of OutOfMemory exception, here are two things we can do:**
+## To identify the causes of OutOfMemory exception, here are two things we can do:
 
 * Memory profiling and take snapshots - There is a few memory profiling tools in the market such as dotMemory, Ants Memory Profiler or .Net Memory Profiler which could help to locate the memory issue. By observing the memory usage graph and comparing the memory snapshots, we can see which type of objects are increasing overtime then we need to think the question "Does our system need this many objects?"
 
 * Collecting stack traces – even though the stack traces sometimes are not directly related to the real problem. But by collecting many of them could be helpful to identifying the places which are aggressively allocating memory.
 
-**Symptoms and Analysis:**
+## Symptoms and Analysis:
 
 * If the memory of the software is properly managed, the memory will grow as the software starts up in the beginning. It may have some small fluctuations, but then the overall memory usage will remain stable at around a certain value. It may go up or down if user performs some operations but the memory won't continue increasing overtime.
 
