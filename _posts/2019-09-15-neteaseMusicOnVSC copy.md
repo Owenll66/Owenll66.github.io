@@ -1,12 +1,14 @@
 ---
 layout: blog
-title: How to play music on Visual Studio Code - A Free music plugin
+
+title: Playing music on Visual Studio Code - A Free music plugin
+
 description: This blog will introduce the steps to install Netease Music plugin to VSC
 
 author: owenll66
 ---
 
-# How to play music on Visual Studio Code - A Free music plugin
+# Playing music on Visual Studio Code - A Free music plugin
 
 ## Here are the steps to install NeteaseMusic plugin
 
@@ -50,7 +52,7 @@ Enter `NeteaseMusic` to start exploring :D
 
 * `NeteaseMusic.API.SSL`: enable / disable HTTPS API
 * `NeteaseMusic.SSL.strict`: enable / disable SSL certificate checking
-* `NeteaseMusic.CDN.redirect`: enable / disable CDN rediection
+* `NeteaseMusic.CDN.redirect`: enable / disable CDN redirection
 
 Source: https://github.com/nondanee/vsc-netease-music  
 

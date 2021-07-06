@@ -1,6 +1,8 @@
 ---
 layout: blog
+
 title: Brief Introduction About Lambda Expression In Java
+
 description: Lambda expression was introduced in Java in 2014 which enables functional programming on streams of elements. It is a really cool feature which simplifies the code if you are using the recommend version by Oracle (java 1.8).
 
 author: owenll66
@@ -80,7 +82,7 @@ interface HelloWorld {
     }
 }
 ```
-This code passes a lambda expression to the function "passLambda" which takes an argument of an instance of HelloWorld interface. This works same as passing an implementated instance of the interface HelloWorld.  
+This code passes a lambda expression to the function "passLambda" which takes an argument of an instance of HelloWorld interface. This works same as passing an implemented instance of the interface HelloWorld.  
 
 
 ## Method reference
@@ -123,7 +125,7 @@ List<Box> boxes = Arrays.asList(
     new Box("efg",5,5,5)
 );
 
-System.out.println("Sort by lambda expression descendingly");
+System.out.println("Sort by lambda expression in descending order");
 //sort the List according to the box name -- descending order
 Collections.sort(boxes, ((box1, box2)->box2.getName().compareTo(box1.getName()) ));
 

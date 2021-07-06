@@ -1,6 +1,8 @@
 ---
 layout: blog
+
 title: A Simple Encryption And Decryption Algorithm In Python
+
 description: A simple encryption and decryption algorithm in python is provided and available for download.
 
 author: owenll66
