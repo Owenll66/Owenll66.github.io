@@ -24,9 +24,9 @@ OutOfMemoryException will be thrown when there is not enough chuck of memory for
 
 ## To identify the causes of OutOfMemory exception, here are two things we can do:
 
-* Memory profiling and take snapshots - There is a few memory profiling tools in the market such as dotMemory, Ants Memory Profiler or .Net Memory Profiler which could help to locate the memory issue. By observing the memory usage graph and comparing the memory snapshots, we can see which type of objects are increasing overtime then we need to think the question "Does our system need this many objects?"
+* Memory profiling and take snapshots - There is a few memory profiling tools in the market such as dotMemory, Ants Memory Profiler or .Net Memory Profiler which could help to locate the memory issue. By observing the memory usage graph and comparing the memory snapshots, we can tell which type of objects are increasing overtime then we need to think the question "Does our system need this many objects?"
 
-* Collecting stack traces – even though the stack traces sometimes are not directly related to the real problem. But by collecting many of them could be helpful to identifying the places which are aggressively allocating memory.
+* Collecting stack traces – even though the stack traces sometimes are not directly related to the real problem. But by collecting many of them could be helpful to identifying the potential places which are aggressively allocating memory.
 
 ## Symptoms and Analysis:
 
