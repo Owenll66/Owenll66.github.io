@@ -38,7 +38,7 @@ OutOfMemoryException will be thrown when there is not enough chuck of memory for
 
 ![OOM2](https://www.owenll66.com/blog-res/blog-OOM/OOM2.png)
 
-* Here is another leaking scenario which requires user's operations. For example, it a user open a window and close it multiple times. Every time the window is closed the resource should be released. If not, the memory graph will look like below. Each red point indicates the user click on the open window button. In this case, to locate the problem would not be too hard. Review the code that closes the window and release the data once not using.
+* Here is another leaking scenario which requires user's operations. For example, it a user open a window and close it multiple times. Every time the window is closed the resource should be released. If not, the memory graph will look like below. Each red point indicates the user clicking on the open/show window button. In this case, to locate the problem would not be too hard. Review the code that closes the window and release the data once not using.
 
 ![OOM3](https://www.owenll66.com/blog-res/blog-OOM/OOM3.png)
 
