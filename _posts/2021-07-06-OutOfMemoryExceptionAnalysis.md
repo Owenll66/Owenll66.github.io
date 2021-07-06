@@ -3,7 +3,7 @@ layout: blog
 
 title: What is OutOfMemory exception? How to identify them? How to avoid?
 
-description: OutOfMemory exception is one of the most head-scratching problem to identify when debugging a software. This blog will discuss what OutOfMemory exception is and some typical symptoms of it and what the possible causes are.
+description: OutOfMemory exception is one of the most head-scratching problems to locate when debugging a software. This blog will discuss what OutOfMemory exception is and some typical symptoms of it and what the possible causes are.
 
 author: owenll66
 ---
@@ -12,15 +12,15 @@ author: owenll66
 
 ## What is OutOfMemory?
 
-OutOfMemoryException will be thrown when there is not enough chuck of memory for the program to allocate. The problem can be tricky sometimes as the stack traces are not always pointing to the right places due to the location of the exception thrown could be anywhere the program tries to allocate memory while there is not enough.
+OutOfMemoryException will be thrown when there is not enough chuck of memory for the program to allocate. The problem can be tricky sometimes as the stack traces are not always pointing to the right places (the place where memory leaks occur), due to the location of the exception thrown could be anywhere the program tries to allocate memory while there is not enough.
 
 ## The causes of this type of exception can be summarised as below:
 
-* the software itself it is very memory consuming. In this scenario, we cannot do much from the software side but to upgrade the hardware.
+* the software itself it is very memory consuming. In this scenario, we cannot do much from the software side but to upgrade the hardware to have enough RAM.
 
 * There is potential memory leaks in the software. The symptom is usually that as we start up the program, the performance of the software will drop overtime as we usually refer to the software is slow. If restarting the software the performance will come back and then again decrease overtime.
 
-* Low memory performance due to poorly coded algorithms in the software.  
+* Low memory performance (excessively requesting memory) due to poorly coded algorithms in the software.  
 
 ## To identify the causes of OutOfMemory exception, here are two things we can do:
 
