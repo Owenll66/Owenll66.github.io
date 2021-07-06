@@ -40,15 +40,15 @@ OutOfMemoryException will be thrown when there is not enough chuck of memory for
 
 * If the memory keeps increasing, it is very likely there are memory leaks in the system. Eventually it will crash at a certain point. As a programmer, be aware of these spots which running at the back ground to update or remove the data. The unmanaged objects to be updated or removed must be disposed/released explicitly in code. Otherwise they will remain in the memory.
 
-![OOM2](https://www.owenll66.com/blog-res/blog-OOM/OOM1.png)
+![OOM2](https://www.owenll66.com/blog-res/blog-OOM/OOM2.png)
 
 * Here is another leaking scenario which requires user's operations. For example, it a user open a window and close it multiple times. Every time the window is closed the resource should be released. If not, the memory graph will look like below. Each red point indicates the user click on the open window button. In this case, to locate the problem would not be too hard. Review the code that closes the window and release the data once not using.
 
-![OOM3](https://www.owenll66.com/blog-res/blog-OOM/OOM1.png)
+![OOM3](https://www.owenll66.com/blog-res/blog-OOM/OOM3.png)
 
 * In this graph below, the memory graph starts spiking at a certain point. This is likely to be the  memory consuming algorithms running at the background continue requesting large chucks of memory. The drops indicate that the Garbage collector can sense memory pressure and comes in to free up some memory. But the collecting speed cannot catch up the memory allocating speed. In the end, the software will crash with the out of memory issue. In this scenario, the exception stack traces should indicate the areas where the memory consuming code is running. Optimise the algorithms and avoid inefficient database queries.
 
-![OOM4](https://www.owenll66.com/blog-res/blog-OOM/OOM1.png)
+![OOM4](https://www.owenll66.com/blog-res/blog-OOM/OOM4.png)
 
 Reference: [OutOfMemoryException in C#](https://docs.microsoft.com/en-us/dotnet/api/system.outofmemoryexception?view=net-5.0#:%7E:text=An%20OutOfMemoryException%20exception%20has%20two,to%20successfully%20perform%20an%20operation. "OutOfMemoryException Class").
 
