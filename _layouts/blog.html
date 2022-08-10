@@ -1,83 +1,68 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: " en" }}">
-
-<head>
-    {% if site.google_analytics %}
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', '{{ site.google_analytics }}');
-    </script>
-    {% endif %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#157878">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="shortcut icon" type="image/png" href="/favicon.png">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    {% seo %}
-</head>
-
-<body>
-    <a id="skip-to-content" href="#content">Skip to the content.</a>
-    <header class="page-header" role="banner">
-
-        <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
-
-        {% comment %}
-        <!--a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
-          {% if site.show_downloads %}
-            <!a href="{{ site.github.zip_url }}" class="btn">Download .zip</a>
-            <a href="{{ site.github.tar_url }}" class="btn">Download .tar.gz</a-->
-        {% endif %}
-        {% endcomment %}
-        <ul class="menu">
-            <li class="menu_li"><a href="https://www.owenll66.com/">Blog</a></li>
-            <li class="menu_li"><a href="https://www.owenll66.com/project.html">Project</a></li>
-            <li class="menu_li"><a href="https://www.owenll66.com/about.html">About</a></li>
-            <li class="menu_li"><a href="https://www.owenll66.com/fun.html">Fun</a></li>
-            <li class="menu_li"><a href="https://www.owenll66.com/stars.html">Stars</a></li>
-        </ul>
-    </header>
-
-    <main id="content" class="main-content" role="main">
-        {{ content }}
-        <!-- Disqus Board -->
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-            var disqus_shortname = 'owenll66'; // required: replace example with your forum shortname
-            /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function () {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
+<html lang="{{ site.lang | default: 'en' }}">
+    <head>
+        {% if site.google_analytics %}
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', '{{ site.google_analytics }}');
         </script>
+        {% endif %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#157878">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <link rel="shortcut icon" type="image/png" href="/favicon.png">
+        <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+        {% seo %}
+    </head>
+
+    <body>
+        <a id="skip-to-content" href="#content">Skip to the content.</a>
+        <header class="page-header" role="banner">
+
+            <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+
+            <ul class="menu">
+                <li class="menu_li"><a href="https://www.owenll66.com/">Blog</a></li>
+                <li class="menu_li"><a href="https://www.owenll66.com/project.html">Project</a></li>
+                <li class="menu_li"><a href="https://www.owenll66.com/about.html">About</a></li>
+                <li class="menu_li"><a href="https://www.owenll66.com/fun.html">Fun</a></li>
+                <li class="menu_li"><a href="https://www.owenll66.com/stars.html">Stars</a></li>
+            </ul>
+        </header>
+
+        <main id="content" class="main-content" role="main">
+            {{ content }}
+
+            <!-- Disqus Board -->
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                var disqus_shortname = 'owenll66'; // required: replace example with your forum shortname
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function () {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+        </main>
 
         <footer class="site-footer">
-            {% if site.github.is_project_page %}
-            <span class="site-footer-owner">
-                <a href="{{ site.github.repository_url }}">
-                    {{ site.github.repository_name }}
-                </a> is maintained by 
-                <a href="{{ site.github.owner_url }}">
-                    {{ site.github.owner_name }}
-                </a>.
-            </span>
-            {% endif %}
             <span class="site-footer-credits">
                 Copyleft 
                 <span class="copyleft">&copy;</span>
-                2019-{{ 'now' | date: "%Y" }} Owenll66 | powered by <a href="https://jekyllrb.com/">Jekyll</a>,
-                <a href="http://jekyllthemes.org/themes/cayman-theme/">Cayman Theme</a>
+                2019-{{ 'now' | date: "%Y" }} 
+                <a href="https://github.com/Owenll66" target="_blank">Owenll66</a>
+                    | powered by 
+                <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>,
+                <a href="http://jekyllthemes.org/themes/cayman-theme/" target="_blank">Cayman Theme</a>
                 and 
-                <a href="https://pages.github.com/">Github Pages</a>
+                <a href="https://pages.github.com/" target="_blank">Github Pages</a>
             </span>
         </footer>
-    </main>
-</body>
-
+    </body>
 </html>

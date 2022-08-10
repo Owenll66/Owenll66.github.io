@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: 'en' }}">
-  <head>
-
-    {% if site.google_analytics %}
-      <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '{{ site.google_analytics }}');
-      </script>
-    {% endif %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#157878">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="shortcut icon" type="image/png" href="/favicon.png">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    {% seo %}
-  </head>
-  <body>
+    <head>
+        {% if site.google_analytics %}
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '{{ site.google_analytics }}');
+        </script>
+        {% endif %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#157878">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <link rel="shortcut icon" type="image/png" href="/favicon.png">
+        <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+        {% seo %}
+    </head>
+    <body>
 
     <a id="skip-to-content" href="#content">Skip to the content.</a>
     <header class="page-header" role="banner">
@@ -43,17 +42,21 @@
     </header>
 
     <main id="content" class="main-content" role="main">
-      {{ content }}
-      <footer class="site-footer">
-        {% if site.github.is_project_page %}
-          <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>
-        {% endif %}
-        <span class="site-footer-credits">Copyleft <span class="copyleft">&copy;</span> 2019-{{ 'now' | date: "%Y" }} Owenll66 |
-          powered by <a href="https://jekyllrb.com/">Jekyll</a>,
-          <a href="http://jekyllthemes.org/themes/cayman-theme/">Cayman Theme</a>
-          and <a href="https://pages.github.com/">Github Pages</a>
-        </span>
-      </footer>
+        {{ content }}
     </main>
+
+    <footer class="site-footer">
+        <span class="site-footer-credits">
+            Copyleft 
+            <span class="copyleft">&copy;</span>
+            2019-{{ 'now' | date: "%Y" }} 
+            <a href="https://github.com/Owenll66" target="_blank">Owenll66</a>
+                | powered by 
+            <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>,
+            <a href="http://jekyllthemes.org/themes/cayman-theme/" target="_blank">Cayman Theme</a>
+            and 
+            <a href="https://pages.github.com/" target="_blank">Github Pages</a>
+        </span>
+    </footer>
   </body>
 </html>
