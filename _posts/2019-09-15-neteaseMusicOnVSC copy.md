@@ -18,18 +18,18 @@ Download Visual Studio Code on https://code.visualstudio.com/download
 
 ## Step Two: Download NeteaseMusic plugin on VSC
 
-![neteasePlugin](https://www.owenll66.com/blog-res/blog-neteaseMusicOnVSC/neteasePlugin.jpg)
+![neteasePlugin](/assets/blog-neteaseMusicOnVSC/neteasePlugin.jpg)
 
 ## Step Three: Replace "ffmpeg.dll" under VSC directory
 
 For Windows:  
 
-[Download ffmpeg.dll](https://www.owenll66.com/blog-res/blog-neteaseMusicOnVSC/ffmpeg.dll){:.btn}  
+[Download ffmpeg.dll](/assets/blog-neteaseMusicOnVSC/ffmpeg.dll){:.btn}  
 Replace: /ffmpeg.dll
 
 For MacOS:  
 
-[Download libffmpeg.dylib](https://www.owenll66.com/blog-res/blog-neteaseMusicOnVSC/libffmpeg.dylib){:.btn}  
+[Download libffmpeg.dylib](/assets/blog-neteaseMusicOnVSC/libffmpeg.dylib){:.btn}  
 Replace: /Contents/Frameworks/Electron\ Framework.framework/Libraries/libffmpeg.dylib
 ## Step Four: Get Started
 

@@ -32,19 +32,19 @@ OutOfMemoryException will be thrown when there is not enough chuck of memory for
 
 * If the memory of the software is properly managed, the memory will grow as the software starts up in the beginning. It may have some small fluctuations, but then the overall memory usage will remain stable at around a certain value. It may go up or down if user performs some operations but the memory won't continue increasing overtime.
 
-![OOM1](https://www.owenll66.com/blog-res/blog-OOM/OOM1.png)
+![OOM1](/assets/blog-OOM/OOM1.png)
 
 * If the memory keeps increasing, it is very likely there are memory leaks in the system. Eventually it will crash at a certain point. As a programmer, be aware of the background threads doing update or remove operations. The unmanaged objects to be updated or removed must be disposed/released explicitly in code. Otherwise they will remain in the memory util the software process is killed or stopped.
 
-![OOM2](https://www.owenll66.com/blog-res/blog-OOM/OOM2.png)
+![OOM2](/assets/blog-OOM/OOM2.png)
 
 * Here is another leaking scenario which requires user's operations. For example, it a user open a window and close it multiple times. Every time the window is closed the resource should be released. If not, the memory graph will look like below. Each red point indicates the user clicking on the open/show window button. In this case, to locate the problem would not be too hard. Review the code that closes the window and release the data once not using.
 
-![OOM3](https://www.owenll66.com/blog-res/blog-OOM/OOM3.png)
+![OOM3](/assets/blog-OOM/OOM3.png)
 
 * In this graph below, the memory graph starts spiking at a certain point. This is likely to be the  memory consuming algorithms running and keep requesting large chucks of memory. The drops indicate that the Garbage collector can sense memory pressure and comes in to free up some memory. But the collecting speed cannot catch up the memory allocating speed. In the end, the software will crash with the out of memory exception. In this scenario, the exception stacktraces should indicate the areas where the memory consuming code is running. Optimise the algorithms and avoid inefficient database queries.
 
-![OOM4](https://www.owenll66.com/blog-res/blog-OOM/OOM4.png)
+![OOM4](/assets/blog-OOM/OOM4.png)
 
 Reference: [OutOfMemoryException in C#](https://docs.microsoft.com/en-us/dotnet/api/system.outofmemoryexception?view=net-5.0#:%7E:text=An%20OutOfMemoryException%20exception%20has%20two,to%20successfully%20perform%20an%20operation. "OutOfMemoryException Class").
 

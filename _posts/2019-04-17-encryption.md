@@ -192,15 +192,15 @@ while(choose == True):
 ```
 ## Run Example
 The text file to be encoded.  
-![poem](https://www.owenll66.com/blog-res/blog-encryption/poem.png)
+![poem](/assets/blog-encryption/poem.png)
 
 Run command "python3 encoder.py"
 
-![commandline1](https://www.owenll66.com/blog-res/blog-encryption/commandline1.png)
+![commandline1](/assets/blog-encryption/commandline1.png)
 
 ciphertext:
 
-![ciphertext](https://www.owenll66.com/blog-res/blog-encryption/ciphertext.png)
+![ciphertext](/assets/blog-encryption/ciphertext.png)
 
 
 ## Note
@@ -213,7 +213,7 @@ original content will be deleted!!! (not very friendly!)
 
 ## Download
 
-[Download encoder.py](https://www.owenll66.com/blog-res/blog-encryption/encoder.py){:.btn} [Download decoder.py](https://www.owenll66.com/blog-res/blog-encryption/decoder.py){:.btn}
+[Download encoder.py](/assets/blog-encryption/encoder.py){:.btn} [Download decoder.py](/assets/blog-encryption/decoder.py){:.btn}
 
 <br>
 
