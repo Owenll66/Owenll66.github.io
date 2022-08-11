@@ -1,6 +1,5 @@
 title: Owenll66's Blog Site
 description: Computer Science knowledge is worth sharing!
-show_downloads: true
 google_analytics: UA-143383051-1
 theme: jekyll-theme-cayman
 permalink: /:categories/:year/:month/:day/:title
