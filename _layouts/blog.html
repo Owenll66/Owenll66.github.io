@@ -20,17 +20,7 @@
     </head>
 
     <body>
-        <header class="page-header" role="banner">
-            <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
-
-            <ul class="menu">
-                <li class="menu_li"><a href="https://www.owenll66.com/">Blog</a></li>
-                <li class="menu_li"><a href="https://www.owenll66.com/project.html">Project</a></li>
-                <li class="menu_li"><a href="https://www.owenll66.com/about.html">About</a></li>
-                <li class="menu_li"><a href="https://www.owenll66.com/fun.html">Fun</a></li>
-                <li class="menu_li"><a href="https://www.owenll66.com/stars.html">Stars</a></li>
-            </ul>
-        </header>
+        {% include header.html %}
 
         <main id="content" class="main-content" role="main">
             {{ content }}
@@ -49,18 +39,6 @@
             </script>
         </main>
 
-        <footer class="site-footer">
-            <span>
-                Copyleft 
-                <span class="copyleft">&copy;</span>
-                2019-{{ 'now' | date: "%Y" }} 
-                <a href="https://github.com/Owenll66" target="_blank">Owenll66</a>
-                    | powered by 
-                <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>,
-                <a href="http://jekyllthemes.org/themes/cayman-theme/" target="_blank">Cayman Theme</a>
-                and 
-                <a href="https://pages.github.com/" target="_blank">Github Pages</a>
-            </span>
-        </footer>
+        {% include footer.html %}
     </body>
 </html>
