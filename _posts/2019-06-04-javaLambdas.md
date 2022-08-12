@@ -145,7 +145,3 @@ boxes.parallelStream()
 This blog only covers a few common uses of Lambda expressions. For full version of Lambda expression examples, please checkout: https://github.com/Owenll66/JavaLambdaExample  
 
 Please leave a comment if you have any questions or suggestions.
-
-<br>
-
-***

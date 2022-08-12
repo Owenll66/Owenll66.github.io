@@ -52,8 +52,4 @@ Enter `NeteaseMusic` to start exploring :D
 * `NeteaseMusic.SSL.strict`: enable / disable SSL certificate checking
 * `NeteaseMusic.CDN.redirect`: enable / disable CDN redirection
 
-Source: https://github.com/nondanee/vsc-netease-music  
-
-<br> 
-
-***
+Source: https://github.com/nondanee/vsc-netease-music

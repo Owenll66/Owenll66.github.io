@@ -212,7 +212,3 @@ original content will be deleted!!! (not very friendly!)
 ## Download
 
 [Download encoder.py](/assets/blog-encryption/encoder.py){:.btn} [Download decoder.py](/assets/blog-encryption/decoder.py){:.btn}
-
-<br>
-
-***
