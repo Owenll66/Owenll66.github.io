@@ -1,6 +1,8 @@
 ---
 layout: blog
 
+comments: true
+
 title: What is OutOfMemory exception? How to identify them? How to avoid?
 
 description: OutOfMemory exception is one of the most head-scratching problems to locate when debugging a software. This blog will discuss what OutOfMemory exception is and some typical symptoms of it and what the possible causes are.
@@ -16,7 +18,7 @@ OutOfMemoryException will be thrown when there is not enough chuck of memory for
 
 ## The causes of this type of exception can be summarised as below:
 
-* the software itself it is very memory consuming. In this case, we cannot do much from the software side but to upgrade the hardware to have enough RAM.
+* The software itself it is very memory consuming. In this case, we cannot do much from the software side but to upgrade the hardware to have enough RAM.
 
 * There is potential memory leaks in the software. The symptom is usually that as we start up the program, the performance of the software will decrease overtime as we usually refer to "the software is slow". If restarting the software the performance will come back and then again decrease overtime.
 
