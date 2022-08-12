@@ -1,10 +1,8 @@
 ---
 layout: blog
-
+comments: true
 title: Website Updated!
-
 description: website source code available!
-
 author: owenll66
 ---
 

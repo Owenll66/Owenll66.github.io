@@ -1,10 +1,8 @@
 ---
 layout: blog
-
+comments: true
 title: Brief Introduction About Lambda Expression In Java
-
 description: Lambda expression was introduced in Java in 2014 which enables functional programming on streams of elements. It is a really cool feature which simplifies the code if you are using the recommend version by Oracle (java 1.8).
-
 author: owenll66
 ---
 

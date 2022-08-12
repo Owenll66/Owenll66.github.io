@@ -1,12 +1,8 @@
 ---
 layout: blog
-
 comments: true
-
 title: What is OutOfMemory exception? How to identify them? How to avoid?
-
 description: OutOfMemory exception is one of the most head-scratching problems to locate when debugging a software. This blog will discuss what OutOfMemory exception is and some typical symptoms of it and what the possible causes are.
-
 author: owenll66
 ---
 

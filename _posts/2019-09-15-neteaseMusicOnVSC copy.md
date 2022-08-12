@@ -1,10 +1,8 @@
 ---
 layout: blog
-
+comments: true
 title: Playing music on Visual Studio Code - A Free music plugin
-
 description: This blog will introduce the steps to install Netease Music plugin to VSC
-
 author: owenll66
 ---
 
