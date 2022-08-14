@@ -24,6 +24,8 @@ var ground = new Image();
 var pipeNorth = new Image();
 var pipeSouth = new Image();
 
+var startButton;
+
 bird.src = "/assets/flappy-bird/images/bird.png";
 bg.src = "/assets/flappy-bird/images/bg.png";
 ground.src = "/assets/flappy-bird/images/fg.png";
@@ -48,6 +50,11 @@ document.addEventListener("keydown",moveUp);
 
 window.onload = function()
 {
+    startButton = document.getElementById("start-button");
+    startButton.onclick = function()
+    {
+        draw();
+    }
     cvs = document.getElementById("canvas");
     ctx = cvs.getContext("2d");
 
@@ -55,9 +62,7 @@ window.onload = function()
         x : cvs.width,
         y : 0
     };
-    draw();
 }
-
 
 // draw images
 var gameOver = true;
