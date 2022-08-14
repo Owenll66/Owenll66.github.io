@@ -45,7 +45,3 @@ OutOfMemoryException will be thrown when there is not enough chuck of memory for
 ![OOM4](/assets/blog-OOM/OOM4.png)
 
 Reference: [OutOfMemoryException in C#](https://docs.microsoft.com/en-us/dotnet/api/system.outofmemoryexception?view=net-5.0#:%7E:text=An%20OutOfMemoryException%20exception%20has%20two,to%20successfully%20perform%20an%20operation. "OutOfMemoryException Class").
-
-<br>
-
-***
